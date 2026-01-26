@@ -1,0 +1,239 @@
+.events {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.events__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.events__text {
+  position: absolute;
+  top: 230px;
+  right: 20px;
+  transform: translateY(-50%);
+  max-width: 400px;
+  color: white;
+  font-size: 16px;
+  line-height: 1.6;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  background-color: #000000a8;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.events__button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #ffae00fd;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(255, 174, 0, 0.3);
+  position: absolute;
+  bottom: 120px;
+  right: 95px;
+  z-index: 3;
+}
+
+.events__button:hover {
+  background-color: #ff9d00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 174, 0, 0.5);
+}
+
+.events__button-icon {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.events__button-icon img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.events__button-text {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.events__stats-container {
+  position: absolute;
+  bottom: 20px;
+  right: 50px;
+  display: flex;
+  gap: 15px;
+  z-index: 3;
+}
+
+.events__circle-container {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.events__circle-outline {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 3px solid rgb(18, 65, 34);
+  transform: translate(-6px, -6px);
+  z-index: 1;
+}
+
+.events__circle-filled {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #ffae00fd;
+  z-index: 0;
+}
+
+.events__circle-text {
+  position: relative;
+  z-index: 2;
+  font-size: 13px;
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+  margin: 0px;
+  padding: 0 5px;
+  line-height: 1.2;
+}
+
+/*variantes de formas*/
+.events__circle--variant1 .events__circle-outline,
+.events__circle--variant1 .events__circle-filled {
+  border-radius: 42% 58% 52% 48% / 48% 52% 48% 52%;
+}
+
+.events__circle--variant2 .events__circle-outline,
+.events__circle--variant2 .events__circle-filled {
+  border-radius: 48% 52% 45% 55% / 58% 42% 58% 42%;
+}
+
+.events__circle--variant3 .events__circle-outline,
+.events__circle--variant3 .events__circle-filled {
+  border-radius: 52% 48% 58% 42% / 42% 58% 42% 58%;
+}
+
+@media screen and (max-width: 880px) and (min-width: 544px) {
+  .events {
+    height: 400px;
+  }
+
+  .events__text {
+    top: 120px;
+    right: 20px;
+    max-width: 280px;
+    font-size: 12px;
+    transform: none;
+    padding: 9px;
+  }
+
+  .events__button {
+    right: 45px;
+    bottom: 100px;
+  }
+
+  .events__stats-container {
+    right: 20px;
+    bottom: 10px;
+    gap: 10px;
+  }
+
+  .events__circle-container {
+    width: 70px;
+    height: 70px;
+  }
+
+  .events__circle-text {
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 544px) {
+  .events {
+    height: 450px;
+  }
+
+  .events__text {
+    top: auto;
+    bottom: 115px;
+    right: 15px;
+    left: 15px;
+    max-width: none;
+    font-size: 12px;
+    transform: none;
+    padding: 12px;
+  }
+
+  .events__button {
+    right: 15px;
+    bottom: 80px;
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+
+  .events__button-icon {
+    height: 30px;
+    width: 30px;
+  }
+
+  .events__button-icon img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .events__button-text {
+    font-size: 12px;
+  }
+
+  .events__stats-container {
+    right: 15px;
+    bottom: 15px;
+    gap: 8px;
+  }
+
+  .events__circle-container {
+    width: 55px;
+    height: 55px;
+  }
+
+  .events__circle-text {
+    font-size: 8px;
+  }
+
+  .events__circle-outline {
+    transform: translate(-4px, -4px);
+    border: 2px solid #000000;
+  }
+}

@@ -1,0 +1,267 @@
+.pageExperiences {
+  padding: 70px 0px 0px;
+  background-color: #ffffff;
+}
+
+.pageExperiences__header {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.pageExperiences__header-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pageExperiences__header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.6)
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.pageExperiences__header-title {
+  font-size: 48px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 30px 0 20px 0;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.pageExperiences__header-text {
+  font-size: 20px;
+  color: #ffffff;
+  max-width: 700px;
+  margin: 0;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.pageExperiences__cards-container {
+  /*  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 100%; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.pageExperiences__card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.pageExperiences__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.pageExperiences__card-image-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.pageExperiences__card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pageExperiences__card-price {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: rgb(151 114 49 / 93%);
+  color: #000000;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.pageExperiences__card-content {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex: 1;
+}
+
+.pageExperiences__card-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333333;
+  margin: 0;
+}
+
+.pageExperiences__card-description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #666666;
+  margin: 0;
+}
+
+.pageExperiences__card-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 0;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.pageExperiences__card-duration,
+.pageExperiences__card-capacity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pageExperiences__card-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.pageExperiences__card-info-text {
+  font-size: 14px;
+  color: #666666;
+}
+
+.pageExperiences__card-itinerary {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.pageExperiences__card-itinerary-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333333;
+  margin: 0 0 10px 0;
+}
+
+.pageExperiences__card-itinerary-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pageExperiences__card-itinerary-item {
+  font-size: 14px;
+  color: #666666;
+  padding-left: 20px;
+  position: relative;
+}
+
+.pageExperiences__card-itinerary-item::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #124122;
+  font-weight: bold;
+}
+
+.pageExperiences__card-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #ffae00;
+  color: #000000;
+  padding: 8px 20px 8px 8px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(255, 174, 0, 0.3);
+  margin-top: auto;
+}
+
+.pageExperiences__card-button:hover {
+  background-color: #ff9d00;
+  box-shadow: 0 4px 12px rgba(255, 174, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+.pageExperiences__card-button-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pageExperiences__card-button-icon img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.pageExperiences__card-button-text {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .pageExperiences__header {
+    height: 300px;
+  }
+
+  .pageExperiences__header-title {
+    font-size: 36px;
+  }
+
+  .pageExperiences__header-text {
+    font-size: 16px;
+  }
+
+  .pageExperiences__cards-container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin: 40px auto;
+  }
+
+  .pageExperiences__card-title {
+    font-size: 20px;
+  }
+
+  .pageExperiences__card-description {
+    font-size: 14px;
+  }
+}

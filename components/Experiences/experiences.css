@@ -1,0 +1,76 @@
+.experiences {
+  padding: 10px 20px 30px;
+}
+
+.experiences__text-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.experiences__button {
+  fontsize: 16px;
+  color: #000000;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  transition: color 0.3s;
+  background-color: transparent;
+}
+
+.experiences__cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 100%;
+}
+
+.experiences__card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  cursor: pointer;
+  background-color: #000000;
+  height: 320px;
+}
+
+.experiences__card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.experiences__card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.7) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.experiences__card-price {
+  display: block;
+  font-size: 16px;
+  color: #ffae00;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.experiences__card-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+}

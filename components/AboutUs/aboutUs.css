@@ -1,0 +1,136 @@
+.aboutUs {
+  background-color: #ffffff;
+  max-width: 100%;
+  scroll-margin-top: 80px;
+  padding-top: 60px;
+}
+
+.aboutUs__container {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  justify-content: center;
+  width: 80%;
+  margin: auto;
+  padding-bottom: 50px;
+}
+
+.aboutUs__text {
+  flex: 1;
+  max-width: 40%;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+  margin: 0;
+  text-align: inherit;
+}
+
+.aboutUs__imageContainer {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.aboutUs__imageContainer-circle {
+  width: 280px;
+  height: 280px;
+  /*  border-radius: 50%;
+  background-color: #f4c430; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*  border: 8px solid #f4c430; */
+  position: relative;
+}
+
+.aboutUs__imageContainer-photo {
+  width: 240px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 50%;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  margin-top: 30px;
+}
+
+.aboutUs__imageContainer-photo.active {
+  opacity: 1;
+}
+
+.aboutUs__imageContainer-carousel {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 40px;
+}
+
+.aboutUs__imageContainer-carousel-button {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.aboutUs__imageContainer-carousel-button:hover {
+  cursor: pointer;
+  background-color: #bbb;
+}
+
+.aboutUs__imageContainer-carousel-button.active {
+  width: 24px;
+  background-color: #f4c430;
+}
+
+@media screen and (max-width: 880px) and (min-width: 800px) {
+  .aboutUs__text {
+    max-width: 60%;
+  }
+}
+
+@media screen and (max-width: 779px) and (min-width: 545px) {
+  .aboutUs__container {
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
+
+  .aboutUs__text {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 544px) {
+  .aboutUs__container {
+    flex-direction: column;
+    gap: 40px;
+    padding-bottom: 30px;
+  }
+
+  .aboutUs__text {
+    max-width: 100%;
+    text-align: center;
+    font-size: 14px;
+    order: 2;
+  }
+
+  .aboutUs__imageContainer {
+    width: 220px;
+    height: 220px;
+  }
+
+  .aboutUs__imageContainer-circle {
+    width: 220px;
+    height: 220px;
+  }
+
+  .aboutUs__imageContainer-photo {
+    width: 180px;
+    height: 180px;
+  }
+
+  .aboutUs__imageContainer-carousel {
+    margin-top: 35px;
+  }
+}
