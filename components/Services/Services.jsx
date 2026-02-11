@@ -97,92 +97,125 @@ function Services() {
       ],
     },
   ];
+
   const [activeServiceIndex, setActiveServiceIndex] = useState(0);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detectar tamaño de pantalla
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 800);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
-    const activeService = services[activeServiceIndex];
     const intervalService = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % activeService.images.length);
+      setCurrentImageIndex(
+        (prev) => (prev + 1) % services[activeServiceIndex].images.length
+      );
     }, 3000);
 
     return () => clearInterval(intervalService);
-  }, [activeServiceIndex, services]);
+  }, [activeServiceIndex]);
 
-  const handleServiceClick = (index) => {
-    setActiveServiceIndex(index);
-    setCurrentImageIndex(0);
+  // Reorganizar servicios según el tamaño de pantalla
+  const getOrderedServices = () => {
+    const ordered = [];
+    
+    if (isMobile) {
+      // MÓVIL: El servicio activo va PRIMERO (posición 1 = arriba)
+      ordered.push({ ...services[activeServiceIndex], originalIndex: activeServiceIndex, isActive: true });
+      
+      // Los demás servicios llenan las posiciones 2-5 (abajo en cuadrícula 2x2)
+      for (let i = 0; i < services.length; i++) {
+        if (i !== activeServiceIndex) {
+          ordered.push({ ...services[i], originalIndex: i, isActive: false });
+        }
+      }
+    } else {
+      // DESKTOP: El servicio activo va ÚLTIMO (posición 5 = centro)
+      // Los servicios NO activos van en posiciones 1-4 (esquinas)
+      for (let i = 0; i < services.length; i++) {
+        if (i !== activeServiceIndex) {
+          ordered.push({ ...services[i], originalIndex: i, isActive: false });
+        }
+      }
+      
+      // El servicio activo al final
+      ordered.push({ ...services[activeServiceIndex], originalIndex: activeServiceIndex, isActive: true });
+    }
+    
+    return ordered;
   };
 
-  /* const handleServiceHover = (index) => {
-    setActiveServiceIndex(index);
-    setCurrentImageIndex(0);
-  }; */
+  const orderedServices = getOrderedServices();
 
   return (
     <div className="services" id="servicios">
       <div className="services__container">
-        {services.map((service, index) => {
-          const isActive = index === activeServiceIndex;
+        {orderedServices.map((service) => (
+          <div
+            key={service.id}
+            className={`services__item ${
+              service.isActive ? "services__item--active" : ""
+            }`}
+            onClick={() => {
+              setActiveServiceIndex(service.originalIndex);
+              setCurrentImageIndex(0);
+            }}
+          >
+            {!service.isActive ? (
+              <div className="services__item-content">
+                <img
+                  src={service.icon}
+                  alt={service.name}
+                  className="services__item-icon"
+                />
+                <span className="services__item-name">{service.name}</span>
+              </div>
+            ) : (
+              <>
+                <div
+                  className="services__carousel-image"
+                  style={{
+                    backgroundImage: `url(${service.images[currentImageIndex]})`,
+                  }}
+                />
 
-          return (
-            <div
-              key={service.id}
-              className={`services__item ${
-                isActive ? "services__item--active" : ""
-              }`}
-              onClick={() => handleServiceClick(index)}
-              /* onMouseEnter={() => handleServiceHover(index)} */
-            >
-              {!isActive && (
-                <div className="services__item-content">
-                  <img
-                    src={service.icon}
-                    alt={service.name}
-                    className="services__item-icon"
-                  />
-                  <span className="services__item-name">{service.name}</span>
-                </div>
-              )}
+                <div className="services__carousel-overlay">
+                  <h3 className="services__carousel-title">{service.name}</h3>
 
-              {isActive && (
-                <>
-                  <div
-                    className="services__carousel-image"
-                    style={{
-                      backgroundImage: `url(${service.images[currentImageIndex]})`,
-                    }}
-                  />
-
-                  <div className="services__carousel-overlay">
-                    <h3 className="services__carousel-title">{service.name}</h3>
-
-                    <div className="services__carousel-indicators">
-                      <span>Ver más</span>
-                      <div className="services__carousel-dots">
-                        {service.images.map((_, imgIndex) => (
-                          <button
-                            key={imgIndex}
-                            className={`services__carousel-dot ${
-                              currentImageIndex === imgIndex
-                                ? "services__carousel-dot--active"
-                                : ""
-                            }`}
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              setCurrentImageIndex(imgIndex);
-                            }}
-                            aria-label={`Ver imagen ${imgIndex + 1}`}
-                          />
-                        ))}
-                      </div>
+                  <div className="services__carousel-indicators">
+                    <span>Ver más</span>
+                    <div className="services__carousel-dots">
+                      {service.images.map((_, imgIndex) => (
+                        <button
+                          key={imgIndex}
+                          className={`services__carousel-dot ${
+                            currentImageIndex === imgIndex
+                              ? "services__carousel-dot--active"
+                              : ""
+                          }`}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setCurrentImageIndex(imgIndex);
+                          }}
+                          aria-label={`Ver imagen ${imgIndex + 1}`}
+                        />
+                      ))}
                     </div>
                   </div>
-                </>
-              )}
-            </div>
-          );
-        })}
+                </div>
+              </>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );
