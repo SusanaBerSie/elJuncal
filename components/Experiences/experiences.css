@@ -9,7 +9,7 @@
 }
 
 .experiences__button {
-  fontsize: 16px;
+  font-size: 16px;
   color: #000000;
   font-weight: 600;
   text-decoration: none;
@@ -18,6 +18,11 @@
   padding: 0;
   transition: color 0.3s;
   background-color: transparent;
+}
+
+.experiences__button:hover {
+  font-size: 18px;
+  color: #504b44;
 }
 
 .experiences__cards-container {

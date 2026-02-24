@@ -275,6 +275,12 @@
   .navBar__hamburguer-closeIcon:hover {
     opacity: 0.6;
   }
+
+  .navBar__hamburguer-logo{
+  width: 300px;
+  align-self: center;
+  margin-top: 90px;
+  }
 }
 
 @media screen and (max-width: 544px) {
@@ -380,5 +386,11 @@
   .navBar__hamburguer-closeIcon {
     width: 20px;
     height: 20px;
+  }
+
+  .navBar__hamburguer-logo{
+  width: 250px;
+  align-self: center;
+  margin-top: 100px;
   }
 }

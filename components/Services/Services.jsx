@@ -33,7 +33,11 @@ import bathroom6 from "../../src/images/bathroom6.jpg";
 import kittchen1 from "../../src/images/kittchen1.jpg";
 import kittchen2 from "../../src/images/kittchen2.jpg";
 import kittchen3 from "../../src/images/kittchen3.jpg";
-import servicesLogo from "../../src/images/buttonLogo.png";
+import kitchenIcon from "../../src/images/iconKitchen.png";
+import livingIcon from "../../src/images/iconLiving.png";
+import toiletIcon from "../../src/images/iconToilet.png";
+import flowerIcon from "../../src/images/iconflower.png";
+import houseIcon from "../../src/images/iconHouse.png";
 import { useState, useEffect } from "react";
 
 function Services() {
@@ -41,19 +45,19 @@ function Services() {
     {
       id: 0,
       name: "Zonas verdes",
-      icon: servicesLogo,
+      icon: flowerIcon,
       images: [greenArea1, greenArea2, greenArea3, greenArea4, greenArea5],
     },
     {
       id: 1,
       name: "Sala",
-      icon: servicesLogo,
+      icon: livingIcon,
       images: [lounge1, lounge2, lounge3, lounge4],
     },
     {
       id: 2,
       name: "Cocina y comedor",
-      icon: servicesLogo,
+      icon: kitchenIcon,
       images: [
         kittchen1,
         kittchen2,
@@ -72,7 +76,7 @@ function Services() {
     {
       id: 3,
       name: "Patio",
-      icon: servicesLogo,
+      icon: houseIcon,
       images: [
         courtyard1,
         courtyard2,
@@ -86,7 +90,7 @@ function Services() {
     {
       id: 4,
       name: "Baños",
-      icon: servicesLogo,
+      icon: toiletIcon,
       images: [
         bathroom1,
         bathroom2,

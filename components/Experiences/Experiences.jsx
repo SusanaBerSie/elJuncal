@@ -2,10 +2,10 @@ import "./Experiences.css";
 import React from "react";
 import { Link } from "react-router-dom";
 import SectionTitle from "../SectionTitle/SectionTitle";
-import flowerImage from "../../src/images/logoVector.png";
-import dairyProducts from "../../src/images/dairyProducts1.png";
+import flowerImage from "../../src/images/logoChivito.png";
+import dairyProducts from "../../src/images/dairyProducts1.jpg";
 import camping from "../../src/images/camping1.jpg";
-import challenge from "../../src/images/challenge1.jpg";
+import challenge from "../../src/images/challenge.jpeg";
 
 function Experiences() {
   const experiencesTarjets = [

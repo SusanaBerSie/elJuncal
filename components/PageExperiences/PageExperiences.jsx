@@ -1,15 +1,16 @@
 import "./PageExperiences.css";
 import { useState } from "react";
-import dairyProducts from "../../src/images/dairyProducts1.png";
+import dairyProducts from "../../src/images/dairyProducts1.jpg";
 import camping from "../../src/images/camping1.jpg";
-import challenge from "../../src/images/challenge1.jpg";
-import milking from "../../src/images/challenge1.jpg";
-import planting from "../../src/images/challenge1.jpg";
-import stargazing from "../../src/images/challenge1.jpg";
+import challenge from "../../src/images/challenge.jpeg";
+import milking from "../../src/images/milking.jpeg";
+import planting from "../../src/images/planting.jpg";
+import stargazing from "../../src/images/stargazing.jpg";
 import headerImage from "../../src/images/headerExperience.jpg";
 import buttonLogo from "../../src/images/buttonLogo.png";
-import clockIcon from "../../src/images/buttonLogo.png";
-import peopleIcon from "../../src/images/buttonLogo.png";
+import clockIcon from "../../src/images/iconClock.png";
+import peopleIcon from "../../src/images/iconPeople.png";
+import itineraryIcon from "../../src/images/iconClipboard.png";
 
 function PageExperiences() {
   const experiencesTarjets = [
@@ -152,24 +153,19 @@ function PageExperiences() {
               <div className="pageExperiences__card-info">
                 <div className="pageExperiences__card-duration">
                   <span className="pageExperiences__card-info-text">
-                    ⏰ {experience.duration}
+                    <img src={clockIcon} alt="clock" className="pageExperiences__icon" />{experience.duration}
                   </span>
                 </div>
                 <div className="pageExperiences__card-capacity">
-                  {/*  <img
-                    className="pageExperiences__card-icon"
-                    src={peopleIcon}
-                    alt="people"
-                  /> */}
                   <span className="pageExperiences__card-info-text">
-                    👨‍👩‍👧‍👦 Máx. {experience.capacity} personas
+                    <img src={peopleIcon} alt="people" className="pageExperiences__icon" /> {experience.capacity} personas
                   </span>
                 </div>
               </div>
 
               <div className="pageExperiences__card-itinerary">
                 <h4 className="pageExperiences__card-itinerary-title">
-                  📋 Itinerario
+                  <img src={itineraryIcon} alt="Itinerary" className="pageExperiences__icon" /> Itinerario
                 </h4>
                 <ul className="pageExperiences__card-itinerary-list">
                   {experience.itinerary.map((item, index) => (
@@ -184,10 +180,7 @@ function PageExperiences() {
               </div>
 
               <button type="button" className="pageExperiences__card-button">
-                <div className="pageExperiences__card-button-icon">
-                  🐮
-                  {/* <img src={buttonLogo} alt="Button Icon" /> */}
-                </div>
+                  <img src={buttonLogo} alt="Button Icon" className="pageExperiences__card-button-icon"/>
                 <span className="pageExperiences__card-button-text">
                   {language === "esp" ? "Reservar experiencia" : "Book here"}
                 </span>

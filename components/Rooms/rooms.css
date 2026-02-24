@@ -232,7 +232,7 @@
 
 .rooms__detail-cancellation {
   font-size: 12px;
-  color: #666666;
+  color: black;
   margin: 0;
 }
 
@@ -416,9 +416,9 @@
     display: none;
   }
 
-  .rooms__detail-cancellation:not(.rooms__detail-cancellation--mobile) {
+ /*  .rooms__detail-cancellation:not(.rooms__detail-cancellation--mobile) {
     display: none;
-  }
+  } */
 
   .rooms__detail-price {
     font-size: 16px;

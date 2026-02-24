@@ -1,7 +1,7 @@
 import SectionTitle from "../SectionTitle/SectionTitle";
 import "./AboutUs.css";
 import React, { useState, useEffect } from "react";
-import flowerImage from "../../src/images/logoVector.png";
+import logoImage from "../../src/images/logoGato.png";
 import AmorphousCircle from "../AmorphousCircle/AmorphousCircle";
 import aboutUs1 from "../../src/images/aboutUs1.jpg";
 import aboutUs2 from "../../src/images/aboutUs2.jpg";
@@ -22,7 +22,7 @@ function AboutUs() {
     <div className="aboutUs" id="sobre-nosotros">
       <SectionTitle
         title="SOBRE NOSOTROS"
-        image={flowerImage}
+        image={logoImage}
         backgroundColor="#124122"
         circleColor="#f9b234"
       />

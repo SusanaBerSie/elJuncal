@@ -21,10 +21,7 @@ function Events() {
         recuerdo inolvidable.
       </p>
       <button type="button" className="events__button">
-        <div className="events__button-icon">
-          <img src={buttonLogo} alt="Button Icon" />
-        </div>
-
+          <img src={buttonLogo} alt="Button Icon" className="events__button-icon"/>
         <span className="events__button-text">
           {language === "esp" ? "Reserva tu evento" : "Book your event"}
         </span>

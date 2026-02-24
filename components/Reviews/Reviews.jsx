@@ -1,6 +1,6 @@
 import "./Reviews.css";
 import SectionTitle from "../SectionTitle/SectionTitle";
-import flowerImage from "../../src/images/logoVector.png";
+import logoImage from "../../src/images/logoVaca.png";
 
 function Reviews() {
   return (
@@ -8,14 +8,14 @@ function Reviews() {
       <SectionTitle
         title="LO QUE CUENTAN LOS 
         VISITANTES DEL JUNCAL"
-        image={flowerImage}
+        image={logoImage}
         backgroundColor="#124122"
         circleColor="#f9b234"
       />
       <p>Aquí debería conectar la API de google business profile</p>
       <SectionTitle
         title="¡¡QUEREMOS SABER TU OPINIÓN!!"
-        image={flowerImage}
+        image={logoImage}
         backgroundColor="#124122"
         circleColor="#f9b234"
         isImageLeft={false}

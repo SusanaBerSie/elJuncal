@@ -1,6 +1,6 @@
 import "./Rooms.css";
 import SectionTitle from "../SectionTitle/SectionTitle";
-import flowerImage from "../../src/images/logoVector.png";
+import flowerImage from "../../src/images/logoFlor.png";
 import buttonLogo from "../../src/images/buttonLogo.png";
 import room1Photo1 from "../../src/images/room1Photo1.jpg";
 import room1Photo2 from "../../src/images/room1Photo2.jpg";
@@ -138,9 +138,7 @@ function Rooms() {
                       </div>
 
                       <button type="button" className="rooms__detail-button">
-                        <div className="rooms__detail-button-icon">
-                          <img src={buttonLogo} alt="Ícono de reserva" />
-                        </div>
+                          <img src={buttonLogo} alt="Ícono de reserva" className="rooms__detail-button-icon"/>
                         <span className="rooms__detail-button-text">
                           {language === "esp" ? "Reserva aquí" : "Book here"}
                         </span>
@@ -182,9 +180,9 @@ function Rooms() {
                         </div>
                       </div>
 
-                      <p className="rooms__detail-cancellation rooms__detail-cancellation--mobile">
+                      {/* <p className="rooms__detail-cancellation rooms__detail-cancellation--mobile">
                         Cancelación gratuita
-                      </p>
+                      </p> */}
                     </div>
                   </div>
                 )}

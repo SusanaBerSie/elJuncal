@@ -1,0 +1,60 @@
+.page-gallery {
+  background-color: #000;
+  overflow: hidden;
+  padding: 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.marquee-row {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.marquee-track {
+  display: flex;
+  flex-shrink: 0;
+  will-change: transform;
+}
+
+/* Un solo keyframe: siempre va de 0 a -50% */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* La dirección y duración se inyectan desde el JSX via style inline */
+.marquee-track--active {
+  animation: marquee var(--dur, 40s) linear infinite;
+  animation-direction: var(--dir, normal);
+}
+
+/* Pausa al hover */
+.marquee-row:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  flex-shrink: 0;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #111;
+  margin-right: 12px;
+}
+
+.marquee-item img {
+  height: 100%;
+  width: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 12px;
+  vertical-align: top;
+}

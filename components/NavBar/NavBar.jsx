@@ -29,7 +29,9 @@ function NavBar() {
             <a className="navBar__hamburguer-option">Eventos</a>
             <a className="navBar__hamburguer-option">Voluntariado</a>
             <a className="navBar__hamburguer-option">Galería</a>
+            <img src={logo} alt="Logo" className="navBar__hamburguer-logo"></img>
           </div>
+          
         </>
       )}
       <nav className="navBar">

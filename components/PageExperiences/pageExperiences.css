@@ -154,6 +154,13 @@
 .pageExperiences__card-info-text {
   font-size: 14px;
   color: #666666;
+  display: flex;
+  gap: 8px;
+}
+
+.pageExperiences__icon {
+  width: 16px;
+  height: 16px;
 }
 
 .pageExperiences__card-itinerary {
@@ -200,7 +207,7 @@
   gap: 10px;
   background-color: #ffae00;
   color: #000000;
-  padding: 8px 20px 8px 8px;
+  padding: 5px 10px;
   border-radius: 25px;
   border: none;
   cursor: pointer;
