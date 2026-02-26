@@ -1,14 +1,18 @@
+ /* ═══════════════════════════════════════════
+   MARQUEE — desktop + tablet
+   ═══════════════════════════════════════════ */
+
 .page-gallery {
   background-color: #000;
-  overflow: hidden;
-  padding: 12px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
   width: 100vw;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
+  overflow: hidden;
+  padding: 80px 0px 8px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .marquee-row {
@@ -16,6 +20,7 @@
   width: 100%;
   overflow: hidden;
   cursor: pointer;
+  position: relative;
 }
 
 .marquee-track {
@@ -24,21 +29,21 @@
   will-change: transform;
 }
 
-/* Un solo keyframe: siempre va de 0 a -50% */
 @keyframes marquee {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
-/* La dirección y duración se inyectan desde el JSX via style inline */
 .marquee-track--active {
   animation: marquee var(--dur, 40s) linear infinite;
   animation-direction: var(--dir, normal);
 }
 
-/* Pausa al hover */
-.marquee-row:hover .marquee-track {
-  animation-play-state: paused;
+/* Pausa al hover — solo dispositivos con mouse */
+@media (hover: hover) {
+  .marquee-row:hover .marquee-track {
+    animation-play-state: paused;
+  }
 }
 
 .marquee-item {
@@ -57,4 +62,172 @@
   object-fit: cover;
   border-radius: 12px;
   vertical-align: top;
+}
+
+/* Indicador de pausa táctil — tablet */
+.marquee-pause-indicator {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+}
+
+.marquee-pause-indicator span {
+  color: #fff;
+  font-size: 14px;
+  font-family: sans-serif;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 6px 14px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+
+/* Tablet: imágenes un poco más pequeñas */
+@media (min-width: 544px) and (max-width: 879px) {
+ .marquee-item {
+    height: 150px;
+  }
+
+  .marquee-gallery .marquee-row:nth-child(4) {
+    display: none;
+  }
+
+  .page-gallery {
+    gap: 8px;
+    padding: 70px 0px 8px 0px;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   MASONRY GRID — móvil (≤543px)
+   ═══════════════════════════════════════════ */
+
+.mobile-gallery {
+  background-color: #000;
+  width: 100%;
+  padding: 68px 0px 8px 0px;
+  box-sizing: border-box;
+}
+
+.masonry-grid {
+  display: flex;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+.masonry-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.masonry-item {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #111;
+  transition: opacity 0.2s ease;
+}
+
+.masonry-item:active {
+  opacity: 0.8;
+}
+
+.masonry-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* ═══════════════════════════════════════════
+   LIGHTBOX — móvil
+   ═══════════════════════════════════════════ */
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-content {
+  max-width: 100vw;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 12px 32px;
+  box-sizing: border-box;
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+}
+
+.lightbox-caption {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+  font-family: sans-serif;
+  margin-top: 12px;
+  text-align: center;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  color: #fff;
+  font-size: 36px;
+  width: 44px;
+  height: 64px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  line-height: 1;
+}
+
+.lightbox-prev { left: 8px; }
+.lightbox-next { right: 8px; }
+
+.lightbox-prev:active,
+.lightbox-next:active,
+.lightbox-close:active {
+  background: rgba(255, 255, 255, 0.25);
 }

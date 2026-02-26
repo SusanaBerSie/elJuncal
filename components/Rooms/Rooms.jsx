@@ -34,7 +34,7 @@ function Rooms() {
       images: [room2Photo1, room2Photo2, room2Photo3],
       amenities: ["Silla auxiliar", "Tocador"],
       complements: "Incluye desayuno",
-      price: "70.000 COP/noche",
+      price: "150.000 COP/noche",
     },
     {
       id: 2,
@@ -43,7 +43,7 @@ function Rooms() {
       images: [room3Photo1, room3Photo2, room3Photo3],
       amenities: ["Silla auxiliar", "Espejo de pared"],
       complements: "Incluye desayuno",
-      price: "70.000 COP/noche",
+      price: "130.000 COP/noche",
     },
     {
       id: 3,
@@ -52,7 +52,7 @@ function Rooms() {
       images: [room4Photo1, room4Photo2, room4Photo3],
       amenities: ["Silla auxiliar", "Vista al jardín"],
       complements: "Incluye desayuno",
-      price: "70.000 COP/noche",
+      price: "150.000 COP/noche",
     },
   ];
 
