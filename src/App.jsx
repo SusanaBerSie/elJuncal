@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import PageExperiences from "../components/PageExperiences/PageExperiences";
 import PageGallery from "../components/PageGallery/PageGallery";
 import NavBar from "../components/NavBar/NavBar";
@@ -14,13 +14,16 @@ import Volunteering from "../components/Volunteering/Volunteering";
 import Reviews from "../components/Reviews/Reviews";
 import Footer from "../components/Footer/Footer";
 import PageNotFound from "../components/PageNotFound/PageNotFound";
+import "../utils/utils";
 
-function App() {
-  return (
-    <div className="App">
-      <Router>
-        <NavBar />
-        <Routes>
+function AppContent() {
+  const location = useLocation();
+  const isGallery = location.pathname === "/gallery";
+
+return (
+  <>
+  <NavBar />
+   <Routes>
           <Route
             path="/"
             element={
@@ -41,7 +44,16 @@ function App() {
           <Route path="/gallery" element={<PageGallery />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
-        <Footer />
+        <Footer className={isGallery ? "footer--gallery" : ""}/>
+        </>
+);
+}
+
+function App() {
+  return (
+    <div className="App">
+      <Router>
+        <AppContent/>
       </Router>
     </div>
   );

@@ -71,7 +71,7 @@ const MarqueeRow = memo(function MarqueeRow({ images, direction, duration }) {
         style={{
           "--dur": `${duration}s`,
           "--dir": animDir,
-          animationPlayState: paused ? "paused" : "running",
+         /*  animationPlayState: paused ? "paused" : "running", */
         }}
       >
         {images.map((img, i) => (

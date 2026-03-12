@@ -11,6 +11,7 @@ import buttonLogo from "../../src/images/buttonLogo.png";
 import clockIcon from "../../src/images/iconClock.png";
 import peopleIcon from "../../src/images/iconPeople.png";
 import itineraryIcon from "../../src/images/iconClipboard.png";
+import { openWhatsapp } from "../../utils/whatsapp";
 
 function PageExperiences() {
   const experiencesTarjets = [
@@ -173,13 +174,14 @@ function PageExperiences() {
                       key={index}
                       className="pageExperiences__card-itinerary-item"
                     >
-                      ✔️ {item.activity}
+                      <span>↠</span>
+                      <span>{item.activity}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <button type="button" className="pageExperiences__card-button">
+              <button type="button" className="pageExperiences__card-button" onClick={()=>openWhatsapp("Hola, quiero reservar una experiencia en el Juncal. ¿Podrían brindarme más información?")} aria-label="Reservar experiencia">
                   <img src={buttonLogo} alt="Button Icon" className="pageExperiences__card-button-icon"/>
                 <span className="pageExperiences__card-button-text">
                   {language === "esp" ? "Reservar experiencia" : "Book here"}

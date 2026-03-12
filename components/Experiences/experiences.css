@@ -8,21 +8,26 @@
   justify-content: space-between;
 }
 
+.experiences__text{
+  font-size: 16px;
+}
+
 .experiences__button {
   font-size: 16px;
   color: #000000;
-  font-weight: 600;
+  font-weight: 100;
   text-decoration: none;
   cursor: pointer;
   border: none;
   padding: 0;
   transition: color 0.3s;
   background-color: transparent;
+  align-self: center;
 }
 
 .experiences__button:hover {
-  font-size: 18px;
-  color: #504b44;
+  font-size: 16px;
+  color: #f9b234;
 }
 
 .experiences__cards-container {

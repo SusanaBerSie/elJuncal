@@ -2,6 +2,7 @@ import "./Events.css";
 import eventImage from "../../src/images/eventImage.jpg";
 import buttonLogo from "../../src/images/buttonLogo.png";
 import { useState } from "react";
+import { openWhatsapp } from "../../utils/whatsapp";
 
 function Events() {
   const [language, setLanguage] = useState("esp");
@@ -20,7 +21,7 @@ function Events() {
         brinda. Cada detalle está pensado para que tu evento se convierta en un
         recuerdo inolvidable.
       </p>
-      <button type="button" className="events__button">
+      <button type="button" className="events__button" onClick={()=> openWhatsapp("Hola, quisiera realizar mi evento en el Juncal. ¿Podrían contarme que necesito para hacerlo?")} aria-label="Reservar ahora">
           <img src={buttonLogo} alt="Button Icon" className="events__button-icon"/>
         <span className="events__button-text">
           {language === "esp" ? "Reserva tu evento" : "Book your event"}

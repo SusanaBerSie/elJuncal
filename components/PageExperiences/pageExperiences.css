@@ -57,7 +57,7 @@
   gap: 25px;
   max-width: 100%; */
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: 30px;
   max-width: 1200px;
   margin: 60px auto;
@@ -100,7 +100,7 @@
   right: 15px;
   background-color: rgb(151 114 49 / 93%);
   color: #000000;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
   padding: 8px 16px;
   border-radius: 20px;
@@ -116,7 +116,7 @@
 }
 
 .pageExperiences__card-title {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   color: #333333;
   margin: 0;
@@ -174,6 +174,9 @@
   font-weight: bold;
   color: #333333;
   margin: 0 0 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px; 
 }
 
 .pageExperiences__card-itinerary-list {
@@ -183,21 +186,16 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+  text-align: left;
 }
 
 .pageExperiences__card-itinerary-item {
-  font-size: 14px;
+  font-size: 16px;
   color: #666666;
-  padding-left: 20px;
-  position: relative;
-}
-
-.pageExperiences__card-itinerary-item::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: #124122;
-  font-weight: bold;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
 }
 
 .pageExperiences__card-button {
@@ -241,7 +239,7 @@
 }
 
 .pageExperiences__card-button-text {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
 }
 

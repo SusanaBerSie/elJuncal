@@ -2,8 +2,8 @@ import "./Allies.css";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import flowerImage from "../../src/images/logoPerro.png";
 import caminataImage from "../../src/images/tour.jpg";
-import amasijosImage from "../../src/images/aboutUs2.jpg";
-import tejidosImage from "../../src/images/aboutUs3.jpg";
+import amasijosImage from "../../src/images/mirador.jpg";
+import tejidosImage from "../../src/images/telar.jpg";
 
 function Allies() {
   return (

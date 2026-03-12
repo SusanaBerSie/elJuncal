@@ -6,10 +6,12 @@ import AmorphousCircle from "../AmorphousCircle/AmorphousCircle";
 import aboutUs1 from "../../src/images/aboutUs1.jpg";
 import aboutUs2 from "../../src/images/aboutUs2.jpg";
 import aboutUs3 from "../../src/images/aboutUs3.jpg";
+import { useTranslation } from "react-i18next";
 
 function AboutUs() {
   const carouselImages = [aboutUs1, aboutUs2, aboutUs3];
   const [currentImage, setCurrentImage] = useState(0);
+  const {t}  = useTranslation();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -21,7 +23,7 @@ function AboutUs() {
   return (
     <div className="aboutUs" id="sobre-nosotros">
       <SectionTitle
-        title="SOBRE NOSOTROS"
+        title={t("sobrenosotros")}
         image={logoImage}
         backgroundColor="#124122"
         circleColor="#f9b234"
@@ -30,7 +32,7 @@ function AboutUs() {
         <p className="aboutUs__text">
           Ubicada en Samacá, Boyacá, El Juncal es una casa de campo con 60 años
           de historia agro-pecuaria que ahora abre sus puertas al turismo rural.
-          Aquí, Ricardo, Sofía y sus dos gatos te reciben con la calidez de
+          Aquí, Sofia, Ricardo y sus dos gatos te reciben con la calidez de
           siempre, en un refugio donde el tiempo fluye diferente y la paz del
           campo te invita a reconectar contigo mismo. Un lugar auténtico para
           desconectar y sentirte como en casa.

@@ -1,9 +1,8 @@
 import "./Volunteering.css";
 import volunteerImage from "../../src/images/volunteerImage.jpg";
 import { useState } from "react";
-/* import grass from "../../src/images/grass.jpg"; */
 import buttonLogo from "../../src/images/buttonLogo.png";
-//import { NavLink } from "react-router-dom";
+import { openWhatsapp } from "../../utils/whatsapp";
 
 function Volunteering() {
   const [language, setLanguage] = useState("esp");
@@ -31,7 +30,7 @@ function Volunteering() {
             mientras vives una experiencia que transformará tu manera de ver el
             mundo.
           </p>
-          <button type="button" className="volunteering__button">
+          <button type="button" className="volunteering__button" onClick={()=> openWhatsapp("Hola, quisiera ser voluntario en el Juncal. ¿Podrían brindarme más información?")} aria-label="Reservar ahora">
             <img
               src={buttonLogo}
               alt="Button Icon"

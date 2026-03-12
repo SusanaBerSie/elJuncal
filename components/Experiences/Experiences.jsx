@@ -39,7 +39,7 @@ function Experiences() {
           Descubre lo que puedes vivir con nosotros
         </p>
         <Link to="experiences" className="experiences__button">
-          Ver todas →
+          Ver todas ↠
         </Link>
       </div>
       <div className="experiences__cards-container">

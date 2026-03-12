@@ -15,6 +15,7 @@ import room4Photo1 from "../../src/images/room4Photo1.jpg";
 import room4Photo2 from "../../src/images/room4Photo2.jpg";
 import room4Photo3 from "../../src/images/room4Photo3.jpg";
 import { useState, useEffect } from "react";
+import { openWhatsapp } from "../../utils/whatsapp";
 
 function Rooms() {
   const rooms = [
@@ -137,7 +138,7 @@ function Rooms() {
                         {activeRoom.price}
                       </div>
 
-                      <button type="button" className="rooms__detail-button">
+                      <button type="button" className="rooms__detail-button" onClick={()=> openWhatsapp("Hola, quisiera reservar una habitación en el Juncal. ¿Podrían brindarme más información?")} aria-label="Reservar ahora" >
                           <img src={buttonLogo} alt="Ícono de reserva" className="rooms__detail-button-icon"/>
                         <span className="rooms__detail-button-text">
                           {language === "esp" ? "Reserva aquí" : "Book here"}
@@ -212,10 +213,8 @@ function Rooms() {
           <div className="rooms__detail-booking">
             <div className="rooms__detail-price">{activeRoom.price}</div>
 
-            <button type="button" className="rooms__detail-button">
-              <div className="rooms__detail-button-icon">
-                <img src={buttonLogo} alt="Ícono de reserva" />
-              </div>
+            <button type="button" className="rooms__detail-button" onClick={()=> openWhatsapp("Hola, quisiera reservar una habitación en el Juncal. ¿Podrían brindarme más información?")} aria-label="Reservar ahora">
+              <img src={buttonLogo} alt="Ícono de reserva" className="rooms__detail-button-icon"/>
               <span className="rooms__detail-button-text">
                 {language === "esp" ? "Reserva aquí" : "Book here"}
               </span>
@@ -227,117 +226,6 @@ function Rooms() {
       </div>
     </div>
   );
-  /* return (
-    <div className="rooms" id="habitaciones">
-      <SectionTitle
-        title="NUESTRAS HABITACIONES Y SERVICIOS"
-        image={flowerImage}
-        backgroundColor="#124122"
-        circleColor="#f9b234"
-        isImageLeft={false}
-      />
-      <div className="rooms__container">
-        <div className="rooms__carousel-container">
-          {rooms.map((room, index) => {
-            const isActive = index === activeRoomIndex;
-
-            return (
-              <div
-                key={room.id}
-                className={`rooms__carousel-item ${
-                  isActive
-                    ? "rooms__carousel-item--active"
-                    : "rooms__carousel-item--inactive"
-                }`}
-                onMouseEnter={() => handleRoomHover(index)}
-              >
-                <div
-                  className="rooms__carousel-image"
-                  style={{
-                    backgroundImage: `url(${
-                      isActive ? room.images[currentImageIndex] : room.images[0]
-                    })`,
-                  }}
-                />
-                {/* Nombre de la habitación siempre visible }
-                <div className="rooms__carousel-name">
-                  <span>{room.name}</span>
-                </div>
-                {index === activeRoomIndex && (
-                  <div className="rooms__carousel-details">
-                    <h3 className="rooms__carousel-title">
-                      Habitación {room.name}
-                    </h3>
-                    <p className="rooms__carousel-description">
-                      {room.description} + {room.amenities.join(" + ")} +
-                      desayuno
-                    </p>
-
-                    <div className="rooms__carousel-footer">
-                      <div className="rooms__carousel-indicators">
-                        <span>Desliza para explorar</span>
-                        <div className="rooms__carousel-dots">
-                          {room.images.map((_, imgIndex) => (
-                            <button
-                              key={imgIndex}
-                              className={`rooms__carousel-dot ${
-                                currentImageIndex === imgIndex
-                                  ? "rooms__carousel-dot--active"
-                                  : ""
-                              }`}
-                              onClick={() => setCurrentImageIndex(imgIndex)}
-                              aria-label={`Ver imagen ${imgIndex + 1}`}
-                            />
-                          ))}
-                        </div>
-                      </div>
-
-                      <p className="rooms__detail-cancellation rooms__detail-cancellation--mobile">
-                        Cancelación gratuita
-                      </p>
-                    </div>
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
-
-        <div className="rooms__detail-container">
-          <div className="rooms__detail-info">
-            <h2 className="rooms__detail-name">{activeRoom.name}</h2>
-
-            <div className="rooms__detail-amenities">
-              {activeRoom.amenities.map((amenity, index) => (
-                <div key={index} className="rooms__detail-amenity">
-                  ✓ {amenity}
-                </div>
-              ))}
-            </div>
-
-            <p className="rooms__detail-complements">
-              {activeRoom.complements}
-            </p>
-          </div>
-
-          <div className="rooms__detail-booking">
-            <div className="rooms__detail-price">{activeRoom.price}</div>
-
-            <button type="button" className="rooms__detail-button">
-              <div className="rooms__detail-button-icon">
-                <img src={buttonLogo} alt="Ícono de reserva" />
-              </div>
-              <span className="rooms__detail-button-text">
-                {language === "esp" ? "Reserva aquí" : "Book here"}
-              </span>
-            </button>
-
-            <p className="rooms__detail-cancellation">Cancelación gratuita</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  ); */
 }
 
 export default Rooms;
