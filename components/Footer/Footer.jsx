@@ -5,8 +5,30 @@ import mapIcon from "../../src/images/map.png";
 import whatsappIcon from "../../src/images/whatsappIcon.png";
 import atIcon from "../../src/images/atIcon.png";
 import clickIcon from "../../src/images/click.png";
+import { useNavigate, useLocation } from "react-router-dom";
+
 
 function Footer({className=""}) {
+ const navigate = useNavigate();
+ const location = useLocation();
+
+ const handleFooterNav = (href) => {
+  if (href.startsWith("#")) {
+    if (location.pathname === "/") {
+      const el = document.querySelector(href); 
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/");
+      setTimeout(() => {
+        const el = document.querySelector(href);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 300);
+    }
+  } else {
+    navigate(href);
+  }
+};
+
   return (
     <footer className={`footer ${className}`}>
       <div className="footer__container">
@@ -17,13 +39,13 @@ function Footer({className=""}) {
         ></img>
         <div className="footer__element-container">
           <div className="footer__title">Menú</div>
-          <a className="footer__link" href="#inicio">Sobre nosotros</a>
-          <a className="footer__link" href="#nosotros">Habitaciones y servicios</a>
-          <a className="footer__link" href="#servicios">Experiencias</a>
-          <a className="footer__link" href="#contacto">Eventos</a>
-          <a className="footer__link" href="#contacto">Voluntariado</a>
-          <a className="footer__link" href="#contacto">Comentarios</a>
-          <a className="footer__link" href="#contacto">Galería</a>
+          <a className="footer__link" onClick={()=>handleFooterNav("#sobre-nosotros")}>Sobre nosotros</a>
+          <a className="footer__link" onClick={()=>handleFooterNav("#habitaciones")}>Habitaciones y servicios</a>
+          <a className="footer__link" onClick={()=>navigate("/experiences")}>Experiencias</a>
+          <a className="footer__link" onClick={()=>handleFooterNav("#eventos")}>Eventos</a>
+          <a className="footer__link" onClick={()=>handleFooterNav("#voluntariado")}>Voluntariado</a>
+          <a className="footer__link" onClick={()=>handleFooterNav("#comentarios")}>Comentarios</a>
+          <a className="footer__link" onClick={()=>navigate("/gallery")}>Galería</a>
         </div>
         <div className="footer__element-container">
           <div className="footer__title">Redes sociales</div>
@@ -53,7 +75,7 @@ function Footer({className=""}) {
           </a>
           <a
             className="footer__link"
-            href=""
+            href="https://www.workaway.info/es/host/116257225726"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -63,20 +85,20 @@ function Footer({className=""}) {
         <div className="footer__element-container">
           <div className="footer__info">
             <span className="footer__info-text">
-            <img src={mapIcon} alt="" className="footer__icon" />
+            <img src={mapIcon} alt="icono de mapa" className="footer__icon" />
             <a className="footer__link" href="https://www.google.com/maps/place/Posada+Rural+El+Juncal/@5.532784,-73.4930571,1654m/data=!3m1!1e3!4m6!3m5!1s0x8e41d5b0254aea3f:0xc2ea3c62a4935066!8m2!3d5.5330478!4d-73.4878634!16s%2Fg%2F11g__46trl?entry=ttu&g_ep=EgoyMDI2MDIyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank"
             rel="noopener noreferrer">Samacá, Boyacá, Colombia</a>
             </span>
-            <img src={clickIcon} alt="" className="footer__icon" />
+            <img src={clickIcon} alt="icono de click" className="footer__icon" />
           </div>
           <div className="footer__info">
                             <span className="footer__info-text">
-                              <img src={whatsappIcon} alt="" className="footer__icon" /> +57 310-287-3928
+                              <img src={whatsappIcon} alt="icono de whatsapp" className="footer__icon" /> +57 310-287-3928
                             </span>
           </div>
           <div className="footer__info">
                             <span className="footer__info-text">
-                              <img src={atIcon} alt="" className="footer__icon" /> susaritas4@gmail.com
+                              <img src={atIcon} alt="icono de correo electrónico" className="footer__icon" /> susaritas4@gmail.com
                             </span>
           </div>
         </div>

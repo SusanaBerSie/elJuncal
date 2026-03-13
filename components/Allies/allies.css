@@ -124,7 +124,7 @@
   }
 
   .allies__circle-container {
-    width: 150px;
+    width: 230px;
     height: 190px;
     flex-wrap: wrap;
   }
@@ -139,7 +139,7 @@
   }
 
   .allies__text-paragraph {
-    font-size: 12px;
+    font-size: 16px;
     padding: 0px;
   }
 }
@@ -160,13 +160,13 @@
   }
 
   .allies__image {
-    width: 110px;
+    width: 120px;
     height: 95px;
-    margin-bottom: -15px;
+    margin-bottom: -20px;
   }
 
   .allies__circle-container {
-    height: 120px;
+    height: 170px;
   }
 
   .allies__circle-outline {
@@ -175,12 +175,12 @@
   }
 
   .allies__text-title {
-    font-size: 13px;
+    font-size: 14px;
     margin-bottom: 8px;
   }
 
   .allies__text-paragraph {
-    font-size: 10px;
+    font-size: 14px;
     line-height: 1.4;
   }
 }

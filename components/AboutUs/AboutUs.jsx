@@ -23,19 +23,13 @@ function AboutUs() {
   return (
     <div className="aboutUs" id="sobre-nosotros">
       <SectionTitle
-        title={t("sobrenosotros")}
+        title={t("sobreNosotros")}
         image={logoImage}
         backgroundColor="#124122"
         circleColor="#f9b234"
       />
       <div className="aboutUs__container">
-        <p className="aboutUs__text">
-          Ubicada en Samacá, Boyacá, El Juncal es una casa de campo con 60 años
-          de historia agro-pecuaria que ahora abre sus puertas al turismo rural.
-          Aquí, Sofia, Ricardo y sus dos gatos te reciben con la calidez de
-          siempre, en un refugio donde el tiempo fluye diferente y la paz del
-          campo te invita a reconectar contigo mismo. Un lugar auténtico para
-          desconectar y sentirte como en casa.
+        <p className="aboutUs__text">{t("sobreNosotrosTexto")}
         </p>
         <AmorphousCircle
           variant="2"

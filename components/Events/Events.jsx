@@ -1,30 +1,22 @@
 import "./Events.css";
 import eventImage from "../../src/images/eventImage.jpg";
 import buttonLogo from "../../src/images/buttonLogo.png";
-import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { openWhatsapp } from "../../utils/whatsapp";
 
 function Events() {
-  const [language, setLanguage] = useState("esp");
-
-  const toggleLanguage = () => {
-    setLanguage(language === "esp" ? "eng" : "esp");
-    //lógica para cambiar el idioma de toda la página
-  };
+  const { t } = useTranslation();
 
   return (
     <div className="events" id="eventos">
-      <img className="events__image" src={eventImage} alt="Evento" />
+      <img className="events__image" src={eventImage} alt="Celebración de cumpleaños en el Juncal" />
       <p className="events__text">
-        El Juncal es el escenario perfecto para celebrar tus momentos más
-        importantes rodeado de naturaleza y con la calidez que sólo el campo
-        brinda. Cada detalle está pensado para que tu evento se convierta en un
-        recuerdo inolvidable.
+        {t("eventsText")}
       </p>
-      <button type="button" className="events__button" onClick={()=> openWhatsapp("Hola, quisiera realizar mi evento en el Juncal. ¿Podrían contarme que necesito para hacerlo?")} aria-label="Reservar ahora">
-          <img src={buttonLogo} alt="Button Icon" className="events__button-icon"/>
+      <button type="button" className="events__button" onClick={()=> openWhatsapp(t('holaQuisieraRealizarEvento'))} aria-label={t('reservaAhora')}>
+          <img src={buttonLogo} alt="Icono cabeza de toro" className="events__button-icon"/>
         <span className="events__button-text">
-          {language === "esp" ? "Reserva tu evento" : "Book your event"}
+          {t("reservaTuEvento")}
         </span>
       </button>
 
@@ -35,7 +27,7 @@ function Events() {
           <p className="events__circle-text">
             +100
             <br />
-            visitantes
+            {t("visitantes")}
           </p>
         </div>
 
@@ -45,7 +37,7 @@ function Events() {
           <p className="events__circle-text">
             +50
             <br />
-            huéspedes
+            {t("huespedes")}
           </p>
         </div>
         <div className="events__circle-container events__circle--variant3">
@@ -54,7 +46,7 @@ function Events() {
           <p className="events__circle-text">
             +10
             <br />
-            eventos
+            {t("eventosCount")}
           </p>
         </div>
       </div>

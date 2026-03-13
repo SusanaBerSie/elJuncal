@@ -25,7 +25,7 @@ function Header() {
         </video>
       ) : (
         <>
-          <img src={headerImage} alt="El Juncal" className="header__image" />
+          <img src={headerImage} alt="Vista frontal de la casa principal posada Rural el Juncal" className="header__image" />
           <div className="header__overlay">
             <p className="header__subtitle">EL</p>
             <h1 className="header__title">JUNCAL</h1>

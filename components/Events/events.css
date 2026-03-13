@@ -152,10 +152,10 @@
   }
 
   .events__text {
-    top: 120px;
-    right: 20px;
-    max-width: 280px;
-    font-size: 12px;
+    top: 85px;
+    right: 10px;
+    max-width: 380px;
+    font-size: 16px;
     transform: none;
     padding: 9px;
   }
@@ -177,7 +177,7 @@
   }
 
   .events__circle-text {
-    font-size: 11px;
+    font-size: 14px;
   }
 }
 
@@ -188,18 +188,18 @@
 
   .events__text {
     top: auto;
-    bottom: 115px;
+    bottom: 120px;
     right: 15px;
     left: 15px;
     max-width: none;
-    font-size: 12px;
+    font-size: 14px;
     transform: none;
     padding: 12px;
   }
 
   .events__button {
     right: 15px;
-    bottom: 80px;
+    bottom: 83px;
     font-size: 12px;
     padding: 5px 8px;
   }
@@ -215,22 +215,22 @@
   }
 
   .events__button-text {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .events__stats-container {
     right: 15px;
-    bottom: 15px;
+    bottom: 5px;
     gap: 8px;
   }
 
   .events__circle-container {
-    width: 55px;
-    height: 55px;
+    width: 65px;
+    height: 65px;
   }
 
   .events__circle-text {
-    font-size: 8px;
+    font-size: 12px;
   }
 
   .events__circle-outline {

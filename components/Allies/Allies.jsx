@@ -4,12 +4,15 @@ import flowerImage from "../../src/images/logoPerro.png";
 import caminataImage from "../../src/images/tour.jpg";
 import amasijosImage from "../../src/images/mirador.jpg";
 import tejidosImage from "../../src/images/telar.jpg";
+import { useTranslation } from "react-i18next";
 
 function Allies() {
+  const { t } = useTranslation();
+
   return (
     <div className="allies" id="aliados">
       <SectionTitle
-        title="NUESTROS ALIADOS"
+        title={t("nuestrosAliados")}
         image={flowerImage}
         backgroundColor="#124122"
         circleColor="#f9b234"
@@ -20,16 +23,15 @@ function Allies() {
           <img
             className="allies__image"
             src={tejidosImage}
-            alt="Tejidos artesanales"
+            alt="Elaboración de tejidos artesanales"
           />
           <div className="allies__circle-container allies__circle--variant1">
             <div className="allies__circle-outline"></div>
             <div className="allies__circle-filled"></div>
             <div className="allies__text-container">
-              <p className="allies__text-title">Tejidos mamá Luvita</p>
+              <p className="allies__text-title">{t("tejidosMamaLuvitaTitulo")}</p>
               <p className="allies__text-paragraph">
-                Conoce la hacienda Santo Domingo y detalla la elaboración de
-                tejidos artesanales en telar tradicional
+                {t("tejidosMamaLuvitaTexto")}
               </p>
             </div>
           </div>
@@ -39,16 +41,15 @@ function Allies() {
           <img
             className="allies__image"
             src={caminataImage}
-            alt="Caminata al páramo"
+            alt="Caminata al páramo Rabanal"
           />
           <div className="allies__circle-container allies__circle--variant2">
             <div className="allies__circle-outline"></div>
             <div className="allies__circle-filled"></div>
             <div className="allies__text-container">
-              <p className="allies__text-title">Caminatas Tours</p>
+              <p className="allies__text-title">{t("caminatasToursTitulo")}</p>
               <p className="allies__text-paragraph">
-                Respira el aire puro del Valle de Frailejones del Páramo el
-                Rabanal
+                {t("caminatasToursTexto")}
               </p>
             </div>
           </div>
@@ -58,16 +59,15 @@ function Allies() {
           <img
             className="allies__image"
             src={amasijosImage}
-            alt="Amasijos artesanales"
+            alt="Elaboración de amasijos artesanales"
           />
           <div className="allies__circle-container allies__circle--variant3">
             <div className="allies__circle-outline"></div>
             <div className="allies__circle-filled"></div>
             <div className="allies__text-container">
-              <p className="allies__text-title">Mirador el Valle</p>
+              <p className="allies__text-title">{t("miradorElValleTitulo")}</p>
               <p className="allies__text-paragraph">
-                Impresionate con la vista del Valle de Camsicá y aprende a hacer
-                amasijos típicos de la región
+                {t("miradorElValleTexto")}
               </p>
             </div>
           </div>

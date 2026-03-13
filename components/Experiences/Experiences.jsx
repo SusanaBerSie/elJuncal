@@ -6,40 +6,36 @@ import flowerImage from "../../src/images/logoChivito.png";
 import dairyProducts from "../../src/images/dairyProducts1.jpg";
 import camping from "../../src/images/camping1.jpg";
 import challenge from "../../src/images/challenge.jpeg";
+import { useTranslation } from "react-i18next";
 
 function Experiences() {
+  const { t } = useTranslation();
   const experiencesTarjets = [
     {
       image: dairyProducts,
-      title: "Preparación de productos lácteos",
-      price: "50.000 COP/persona",
+      title: t("preparacionProductosLacteos"),
+      price: "50.000 COP/" + t("persona"),
     },
-    { image: camping, title: "Camping", price: "20.000 COP/persona" },
+    { image: camping, title: t("camping"), price: "20.000 COP/" + t("persona") },
     {
       image: challenge,
-      title: "Desafío campesino",
-      price: "30.000 COP/persona",
+      title: t("desafioCampesino"),
+      price: "30.000 COP/" + t("persona"),
     },
   ];
-
-  /* const handleVerTodas = () => {
-    // Lógica para ver todas las experiencias
-  }; */
 
   return (
     <div className="experiences" id="experiencias">
       <SectionTitle
-        title="EXPERIENCIAS DESTACADAS"
+        title={t("ExperienciasDestacadas")}
         image={flowerImage}
         backgroundColor="#124122"
         circleColor="#ffe97f"
       />
       <div className="experiences__text-container">
-        <p className="experiences__text">
-          Descubre lo que puedes vivir con nosotros
-        </p>
+        <p className="experiences__text">{t("ExperienciasDestacadasDescripcion")}</p>
         <Link to="experiences" className="experiences__button">
-          Ver todas ↠
+         {} {t("verTodas")} ↠
         </Link>
       </div>
       <div className="experiences__cards-container">

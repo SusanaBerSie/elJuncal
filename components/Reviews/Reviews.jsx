@@ -1,20 +1,21 @@
 import "./Reviews.css";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import logoImage from "../../src/images/logoVaca.png";
+import { useTranslation } from "react-i18next";
 
 function Reviews() {
+  const { t } = useTranslation();
   return (
     <div className="reviews">
       <SectionTitle
-        title="LO QUE CUENTAN LOS 
-        VISITANTES DEL JUNCAL"
+        title={t("loQueCuentan")}
         image={logoImage}
         backgroundColor="#124122"
         circleColor="#f9b234"
       />
-      <p>Aquí debería conectar la API de google business profile</p>
+      <p>{t("conectarGoogleApi")}</p>
       <SectionTitle
-        title="¡¡QUEREMOS SABER TU OPINIÓN!!"
+        title={t("queremosSaberTuOpinion")}
         image={logoImage}
         backgroundColor="#124122"
         circleColor="#f9b234"

@@ -1,5 +1,5 @@
 import "./PageExperiences.css";
-import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import dairyProducts from "../../src/images/dairyProducts1.jpg";
 import camping from "../../src/images/camping1.jpg";
 import challenge from "../../src/images/challenge.jpeg";
@@ -14,101 +14,95 @@ import itineraryIcon from "../../src/images/iconClipboard.png";
 import { openWhatsapp } from "../../utils/whatsapp";
 
 function PageExperiences() {
+  const { t } = useTranslation();
+
   const experiencesTarjets = [
     {
       image: dairyProducts,
-      price: "50.000 COP/persona",
-      title: "Preparación de productos lácteos",
-      description:
-        "Aprende a elaborar queso fresco, cuajada, arequipe y otros productos lácteos con técnicas tradicionales. Llévate a casa tus propias creaciones.",
-      duration: "Según producto",
+      price: "50.000 COP/" + t("persona"),
+      title: t("preparacionProductosLacteos"),
+      description: t("dairyProductsDescription"),
+      duration: t("segunProducto"),
       capacity: "10",
       itinerary: [
-        { activity: "Introducción a los lácteos artesanales" },
-        { activity: "Preparación de cuajada" },
-        { activity: "Elaboración de queso campesino" },
-        { activity: "Degustación y empaque" },
+        { activity: t("introLacteos") },
+        { activity: t("preparacionCuajada") },
+        { activity: t("elaboracionQueso") },
+        { activity: t("degustacionYempaque") },
       ],
     },
     {
       image: camping,
-      price: "20.000 COP/persona",
-      title: "Camping",
-      description:
-        "Pasa una noche de tertulia con tu mejor compañía. Incluye fogata, masmelos y desayuno al amanecer con vistas espectaculares a las montañas.",
-      duration: "1 noche",
-      capacity: "Todos",
+      price: "20.000 COP/" + t("persona"),
+      title: t("camping"),
+      description: t("campingDescription"),
+      duration: t("unaNoche"),
+      capacity: t("todos"),
       itinerary: [
-        { activity: "Instalación de carpas" },
-        { activity: "Fogata con masmelos" },
-        { activity: "Noche de estrellas" },
-        { activity: "Desayuno campestre" },
+        { activity: t("instalacionCarpas") },
+        { activity: t("fogataConMasmelos") },
+        { activity: t("nocheDeEstrellas") },
+        { activity: t("desayunoCampestre") },
       ],
     },
     {
       image: challenge,
-      price: "30.000 COP/persona",
-      title: "Desafío campesino",
-      description:
-        "Pon a prueba tus habilidades en actividades tradicionales del campo: cargar bultos, arar la tierra, atravezar obstáculos y más. ¡Una competencia divertida para toda la familia!",
-      duration: "2 horas",
+      price: "30.000 COP/"+ t("persona"),
+      title: t("desafioCampesino"),
+      description: t("desafioCampesinoDescription"),
+      duration: t("dosHoras"),
       capacity: "20",
       itinerary: [
-        { activity: "Registro y formación de equipos" },
-        { activity: "Primera ronda: carrera de obstáculos" },
-        { activity: "Segunda ronda: pruebas de fuerza" },
-        { activity: "Final y premiación" },
-        { activity: "Almuerzo campestre" },
+        { activity: t("registroEquipos") },
+        { activity: t("primeraRondaObstaculos") },
+        { activity: t("segundaRondaFuerza") },
+        { activity: t("finalYpremiacion") },
+        { activity: t("almuerzoCampestre") },
       ],
     },
     {
       image: milking,
-      price: "30.000 COP/persona",
-      title: "Ordeño de vacas",
-      description:
-        "Vive la auténtica experiencia campesina aprendiendo a ordeñar vacas de manera tradicional. Conecta con la naturaleza y descubre de dónde viene la leche fresca.",
-      duration: "2 horas",
+      price: "30.000 COP/"+ t("persona"),
+      title: t("ordenoDeVacas"),
+      description: t("ordenoDescription"),
+      duration: t("dosHoras"),
       capacity: "5",
       itinerary: [
-        { activity: "Introducción al ordeño" },
-        { activity: "Observación del proceso" },
-        { activity: "Práctica de ordeño guiado" },
-        { activity: "Degustación de leche fresca" },
+        { activity: t("introOrdeno") },
+        { activity: t("observacionProceso") },
+        { activity: t("practicaOrdeno") },
+        { activity: t("degustacionLeche") },
       ],
     },
     {
       image: planting,
-      price: "30.000 COP/persona",
-      title: "Siembra de seres queridos",
-      description:
-        "Una experiencia conmovedora donde puedes plantar un árbol en memoria de un ser querido. El árbol crecerá en nuestra finca y podrás visitarlo siempre.",
-      duration: "1 hora",
+      price: "30.000 COP/"+ t("persona"),
+      title: t("siembraDeSeresQueridos"),
+      description: t("siembraDescription"),
+      duration: t("unaHora"),
       capacity: "20",
       itinerary: [
-        { activity: "Preparación del terreno" },
-        { activity: "Ceremonia de siembra" },
-        { activity: "Plantación del árbol" },
-        { activity: "Registro y placa conmemorativa" },
+        { activity: t("preparacionTerreno") },
+        { activity: t("ceremoniaSiembra") },
+        { activity: t("plantacionArbol") },
+        { activity: t("registroPlaca") },
       ],
     },
     {
       image: stargazing,
-      price: "30.000 COP/persona",
-      title: "Observación astronómica",
-      description:
-        "¡Que los astros te quiten el sueño! Aprende con un experto sobre el firmamento que nos rodea. Incluye guía, telescopio y fogata",
-      duration: "1 noche",
+      price: "30.000 COP/"+ t("persona"),
+      title: t("observacionAstronomica"),
+      description: t("stargazingDescription"),
+      duration: t("unaNoche"),
       capacity: "10",
       itinerary: [
-        { activity: "Introducción a la astronomía" },
-        { activity: "Observación del firmamento con telescopio" },
-        { activity: "Identificación de constelaciones" },
-        { activity: "Fogata bajo las estrellas" },
+        { activity: t("introAstronomia") },
+        { activity: t("observacionFirmamento") },
+        { activity: t("identificacionConstelaciones") },
+        { activity: t("fogataBajoEstrellas") },
       ],
     },
   ];
-
-  const [language, setLanguage] = useState("esp");
 
   return (
     <div className="pageExperiences">
@@ -116,15 +110,14 @@ function PageExperiences() {
         <img
           className="pageExperiences__header-image"
           src={headerImage}
-          alt=""
+          alt="Entrada a la finca con un camino rodeado de árboles, con un lago al lado"
         />
         <div className="pageExperiences__header-overlay">
           <h1 className="pageExperiences__header-title">
-            Nuestras Experiencias
+            {t("nuestrasExperiencias")}
           </h1>
           <p className="pageExperiences__header-text">
-            Vive momentos únicos en el campo, conecta con la naturaleza y crea
-            recuerdos inolvidables
+            {t("viveMomentosUnicos")}
           </p>
         </div>
       </div>
@@ -154,19 +147,19 @@ function PageExperiences() {
               <div className="pageExperiences__card-info">
                 <div className="pageExperiences__card-duration">
                   <span className="pageExperiences__card-info-text">
-                    <img src={clockIcon} alt="clock" className="pageExperiences__icon" />{experience.duration}
+                    <img src={clockIcon} alt="icono de reloj" className="pageExperiences__icon" />{experience.duration}
                   </span>
                 </div>
                 <div className="pageExperiences__card-capacity">
                   <span className="pageExperiences__card-info-text">
-                    <img src={peopleIcon} alt="people" className="pageExperiences__icon" /> {experience.capacity} personas
+                    <img src={peopleIcon} alt="icono de grupo de personas" className="pageExperiences__icon" /> {experience.capacity === t("todos") ? t("todos") : t("personas", { count: experience.capacity })}
                   </span>
                 </div>
               </div>
 
               <div className="pageExperiences__card-itinerary">
                 <h4 className="pageExperiences__card-itinerary-title">
-                  <img src={itineraryIcon} alt="Itinerary" className="pageExperiences__icon" /> Itinerario
+                  <img src={itineraryIcon} alt="icono de itinerario" className="pageExperiences__icon" /> {t("itinerario")}
                 </h4>
                 <ul className="pageExperiences__card-itinerary-list">
                   {experience.itinerary.map((item, index) => (
@@ -181,10 +174,10 @@ function PageExperiences() {
                 </ul>
               </div>
 
-              <button type="button" className="pageExperiences__card-button" onClick={()=>openWhatsapp("Hola, quiero reservar una experiencia en el Juncal. ¿Podrían brindarme más información?")} aria-label="Reservar experiencia">
-                  <img src={buttonLogo} alt="Button Icon" className="pageExperiences__card-button-icon"/>
+              <button type="button" className="pageExperiences__card-button" onClick={()=>openWhatsapp(t('holaQuieroReservar'))} aria-label={t('reservarExperiencia')}>
+                  <img src={buttonLogo} alt="Icono cabeza de toro" className="pageExperiences__card-button-icon"/>
                 <span className="pageExperiences__card-button-text">
-                  {language === "esp" ? "Reservar experiencia" : "Book here"}
+                  {t("reservarExperiencia")}
                 </span>
               </button>
             </div>

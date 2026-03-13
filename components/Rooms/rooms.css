@@ -57,7 +57,7 @@
   transform: translate(-50%, -50%);
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
@@ -278,7 +278,7 @@
   }
 
   .rooms__carousel-description {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .rooms__detail-container {
@@ -299,7 +299,7 @@
   }
 
   .rooms__detail-name {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .rooms__detail-price {
@@ -349,7 +349,7 @@
   }
 
   .rooms__carousel-description {
-    font-size: 13px;
+    font-size: 14px;
     margin: 0 0 10px 0;
   }
 
@@ -361,7 +361,7 @@
   }
 
   .rooms__carousel-indicators {
-    font-size: 10px;
+    font-size: 12px;
     flex-direction: row;
     align-items: flex-start;
     gap: 5px;
@@ -416,12 +416,8 @@
     display: none;
   }
 
- /*  .rooms__detail-cancellation:not(.rooms__detail-cancellation--mobile) {
-    display: none;
-  } */
-
   .rooms__detail-price {
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
   }
 
@@ -441,7 +437,7 @@
   }
 
   .rooms__detail-button-text {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .rooms__carousel-item--active .rooms__detail-container {

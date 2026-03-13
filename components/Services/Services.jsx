@@ -38,69 +38,48 @@ import livingIcon from "../../src/images/iconLiving.png";
 import toiletIcon from "../../src/images/iconToilet.png";
 import flowerIcon from "../../src/images/iconflower.png";
 import houseIcon from "../../src/images/iconHouse.png";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 
 function Services() {
-  const services = [
-    {
-      id: 0,
-      name: "Zonas verdes",
-      icon: flowerIcon,
-      images: [greenArea1, greenArea2, greenArea3, greenArea4, greenArea5],
-    },
-    {
-      id: 1,
-      name: "Sala",
-      icon: livingIcon,
-      images: [lounge1, lounge2, lounge3, lounge4],
-    },
-    {
-      id: 2,
-      name: "Cocina y comedor",
-      icon: kitchenIcon,
-      images: [
-        kittchen1,
-        kittchen2,
-        kittchen3,
-        diningRoom1,
-        diningRoom2,
-        diningRoom3,
-        diningRoom4,
-        diningRoom5,
-        diningRoom6,
-        diningRoom7,
-        diningRoom8,
-        diningRoom9,
-      ],
-    },
-    {
-      id: 3,
-      name: "Patio",
-      icon: houseIcon,
-      images: [
-        courtyard1,
-        courtyard2,
-        courtyard3,
-        courtyard4,
-        courtyard5,
-        courtyard6,
-        courtyard7,
-      ],
-    },
-    {
-      id: 4,
-      name: "Baños",
-      icon: toiletIcon,
-      images: [
-        bathroom1,
-        bathroom2,
-        bathroom3,
-        bathroom4,
-        bathroom5,
-        bathroom6,
-      ],
-    },
-  ];
+  const { t } = useTranslation();
+
+  const services = useMemo(() => [
+      {
+        id: 0,
+        name: t("zonasVerdes"),
+        icon: flowerIcon,
+        images: [greenArea1, greenArea2, greenArea3, greenArea4, greenArea5],
+      },
+      {
+        id: 1,
+        name: t("sala"),
+        icon: livingIcon,
+        images: [lounge1, lounge2, lounge3, lounge4],
+      },
+      {
+        id: 2,
+        name: t("cocinaYComedor"),
+        icon: kitchenIcon,
+        images: [
+          kittchen1, kittchen2, kittchen3, diningRoom1, diningRoom2,
+          diningRoom3, diningRoom4, diningRoom5, diningRoom6, diningRoom7,
+          diningRoom8, diningRoom9,
+        ],
+      },
+      {
+        id: 3,
+        name: t("patio"),
+        icon: houseIcon,
+        images: [courtyard1, courtyard2, courtyard3, courtyard4, courtyard5, courtyard6, courtyard7],
+      },
+      {
+        id: 4,
+        name: t("banos"),
+        icon: toiletIcon,
+        images: [bathroom1, bathroom2, bathroom3, bathroom4, bathroom5, bathroom6],
+      },
+    ], [t]);
 
   const [activeServiceIndex, setActiveServiceIndex] = useState(0);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -126,7 +105,7 @@ function Services() {
     }, 3000);
 
     return () => clearInterval(intervalService);
-  }, [activeServiceIndex]);
+  }, [activeServiceIndex, services]);
 
   // Reorganizar servicios según el tamaño de pantalla
   const getOrderedServices = () => {
@@ -196,7 +175,7 @@ function Services() {
                   <h3 className="services__carousel-title">{service.name}</h3>
 
                   <div className="services__carousel-indicators">
-                    <span>Ver más</span>
+                    <span>{t("verMas")}</span>
                     <div className="services__carousel-dots">
                       {service.images.map((_, imgIndex) => (
                         <button

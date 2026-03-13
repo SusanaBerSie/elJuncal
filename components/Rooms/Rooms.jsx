@@ -15,51 +15,53 @@ import room4Photo1 from "../../src/images/room4Photo1.jpg";
 import room4Photo2 from "../../src/images/room4Photo2.jpg";
 import room4Photo3 from "../../src/images/room4Photo3.jpg";
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { openWhatsapp } from "../../utils/whatsapp";
 
 function Rooms() {
+  const { t } = useTranslation();
+
   const rooms = [
     {
       id: 0,
-      name: "Margarita",
-      description: "1 cama semidoble",
+      name: t("margarita"),
+      description: t("camaSemidoble"),
       images: [room1Photo1, room1Photo2, room1Photo3],
-      amenities: ["Sofa cama", "Armario, escritorio"],
-      complements: "Incluye desayuno",
-      price: "70.000 COP/noche",
+      amenities: [t("sofaCama"), t("armarioEscritorio")],
+      complements: t("incluyeDesayuno"),
+      price: t("precioNoche70"),
     },
     {
       id: 1,
-      name: "Cactus",
-      description: "2 camas dobles",
+      name: t("cactus"),
+      description: t("dosCamasDobles"),
       images: [room2Photo1, room2Photo2, room2Photo3],
-      amenities: ["Silla auxiliar", "Tocador"],
-      complements: "Incluye desayuno",
-      price: "150.000 COP/noche",
+      amenities: [t("sillaAuxiliar"), t("tocador")],
+      complements: t("incluyeDesayuno"),
+      price: t("precioNoche150"),
     },
     {
       id: 2,
-      name: "Rosa",
-      description: "1 cama doble + 1 cama semidoble",
+      name: t("rosa"),
+      description: t("camaDobleYsemidoble"),
       images: [room3Photo1, room3Photo2, room3Photo3],
-      amenities: ["Silla auxiliar", "Espejo de pared"],
-      complements: "Incluye desayuno",
-      price: "130.000 COP/noche",
+      amenities: [t("sillaAuxiliar"), t("espejoDePared")],
+      complements: t("incluyeDesayuno"),
+      price: t("precioNoche130"),
     },
     {
       id: 3,
-      name: "Girasol",
-      description: "2 camas dobles",
+      name: t("girasol"),
+      description: t("dosCamasDobles"),
       images: [room4Photo1, room4Photo2, room4Photo3],
-      amenities: ["Silla auxiliar", "Vista al jardín"],
-      complements: "Incluye desayuno",
-      price: "150.000 COP/noche",
+      amenities: [t("sillaAuxiliar"), t("vistaAlJardin")],
+      complements: t("incluyeDesayuno"),
+      price: t("precioNoche150"),
     },
   ];
 
   const [activeRoomIndex, setActiveRoomIndex] = useState(3);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [language, setLanguage] = useState("esp");
 
   useEffect(() => {
     const activeRoom = rooms[activeRoomIndex];
@@ -79,7 +81,7 @@ function Rooms() {
   return (
     <div className="rooms" id="habitaciones">
       <SectionTitle
-        title="NUESTRAS HABITACIONES Y SERVICIOS"
+        title={t("nuestrasHabitacionesYServicios")}
         image={flowerImage}
         backgroundColor="#124122"
         circleColor="#f9b234"
@@ -138,15 +140,15 @@ function Rooms() {
                         {activeRoom.price}
                       </div>
 
-                      <button type="button" className="rooms__detail-button" onClick={()=> openWhatsapp("Hola, quisiera reservar una habitación en el Juncal. ¿Podrían brindarme más información?")} aria-label="Reservar ahora" >
-                          <img src={buttonLogo} alt="Ícono de reserva" className="rooms__detail-button-icon"/>
+                      <button type="button" className="rooms__detail-button" onClick={()=> openWhatsapp(t('holaQuisieraReservarHabitacion'))} aria-label={t('reservaAhora')} >
+                          <img src={buttonLogo} alt="Icono cabeza de toro" className="rooms__detail-button-icon"/>
                         <span className="rooms__detail-button-text">
-                          {language === "esp" ? "Reserva aquí" : "Book here"}
+                          {t('reservarAqui')}
                         </span>
                       </button>
 
                       <p className="rooms__detail-cancellation">
-                        Cancelación gratuita
+                        {t('cancelacionGratuita')}
                       </p>
                     </div>
                   </div>
@@ -154,17 +156,14 @@ function Rooms() {
 
                 {isActive && (
                   <div className="rooms__carousel-details">
-                    <h3 className="rooms__carousel-title">
-                      Habitación {room.name}
-                    </h3>
+                    <h3 className="rooms__carousel-title">{t('habitacion')} {room.name}</h3>
                     <p className="rooms__carousel-description">
-                      {room.description} + {room.amenities.join(" + ")} +
-                      desayuno
+                      {room.description} + {room.amenities.join(" + ")} + {t('desayuno')}
                     </p>
 
                     <div className="rooms__carousel-footer">
                       <div className="rooms__carousel-indicators">
-                        <span>Desliza para explorar</span>
+                        <span>{t('deslizaParaExplorar')}</span>
                         <div className="rooms__carousel-dots">
                           {room.images.map((_, imgIndex) => (
                             <button
@@ -174,8 +173,8 @@ function Rooms() {
                                   ? "rooms__carousel-dot--active"
                                   : ""
                               }`}
-                              onClick={() => setCurrentImageIndex(imgIndex)}
-                              aria-label={`Ver imagen ${imgIndex + 1}`}
+                              onClick={(e) => {e.stopPropagation(); setCurrentImageIndex(imgIndex)}}
+                              aria-label={t('verImagen', { index: imgIndex + 1 })}
                             />
                           ))}
                         </div>
@@ -200,7 +199,7 @@ function Rooms() {
             <div className="rooms__detail-amenities">
               {activeRoom.amenities.map((amenity, index) => (
                 <div key={index} className="rooms__detail-amenity">
-                  ✓ {amenity}
+                  ↠ {amenity}
                 </div>
               ))}
             </div>
@@ -213,14 +212,14 @@ function Rooms() {
           <div className="rooms__detail-booking">
             <div className="rooms__detail-price">{activeRoom.price}</div>
 
-            <button type="button" className="rooms__detail-button" onClick={()=> openWhatsapp("Hola, quisiera reservar una habitación en el Juncal. ¿Podrían brindarme más información?")} aria-label="Reservar ahora">
-              <img src={buttonLogo} alt="Ícono de reserva" className="rooms__detail-button-icon"/>
+            <button type="button" className="rooms__detail-button" onClick={()=> openWhatsapp(t('holaQuisieraReservarHabitacion'))} aria-label={t('reservaAhora')}>
+              <img src={buttonLogo} alt="Icono cabeza de toro" className="rooms__detail-button-icon"/>
               <span className="rooms__detail-button-text">
-                {language === "esp" ? "Reserva aquí" : "Book here"}
+                {t('reservarAqui')}
               </span>
             </button>
 
-            <p className="rooms__detail-cancellation">Cancelación gratuita</p>
+            <p className="rooms__detail-cancellation">{t('cancelacionGratuita')}</p>
           </div>
         </div>
       </div>

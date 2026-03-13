@@ -79,8 +79,18 @@
 }
 
 .experiences__card-title {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
   color: #ffffff;
   margin: 0;
+}
+
+@media screen and (max-width: 544px){
+  .experiences__text {
+    font-size: 14px;
+}
+
+.experiences__button {
+  font-size: 14px;
+}
 }

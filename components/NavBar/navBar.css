@@ -352,7 +352,7 @@ background-color: #1e6e35;
   }
 
   .navBar__button-text {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .navBar__hamburguer-icon {
@@ -388,16 +388,16 @@ background-color: #1e6e35;
   }
 
   .navBar__button {
-    padding: 2px 4px;
+    padding: 5px 8px;
   }
 
   .navBar__button-text {
-    font-size: 11px;
+    font-size: 14px;
   }
 
   .navBar__button-icon {
-    height: 20px;
-    width: 20px;
+    height: 30px;
+    width: 30px;
   }
 
   .navBar__actionsSection {

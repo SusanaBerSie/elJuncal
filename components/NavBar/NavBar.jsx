@@ -9,25 +9,24 @@ import { useTranslation } from "react-i18next";
 import { openWhatsapp } from "../../utils/whatsapp";
 
 const menuItems = [
-  { label: "Sobre nosotros", labelEng: "About us", href: "#sobre-nosotros" },
-  { label: "Habitaciones y servicios", labelEng: "Rooms & services", href: "#habitaciones" },
-  { label: "Eventos", labelEng: "Events", href: "#eventos" },
-  { label: "Voluntariado", labelEng: "Volunteering", href: "#voluntariado" },
-  { label: "Comentarios", labelEng: "Reviews", href: "#comentarios" },
+  { key: "sobreNosotros", href: "#sobre-nosotros" },
+  { key: "habitacionesYServicios", href: "#habitaciones" },
+  { key: "eventos", href: "#eventos" },
+  { key: "voluntariado", href: "#voluntariado" },
+  { key: "comentarios", href: "#comentarios" },
 ];
 
 const experienceItems = [
-  { label: "Preparación productos lácteos", labelEng: "Dairy products" },
-  { label: "Camping", labelEng: "Camping" },
-  { label: "Desafío campesino", labelEng: "Farmer challenge" },
-  { label: "Ordeño de vacas", labelEng: "Cow milking" },
-  { label: "Siembra de seres queridos", labelEng: "Memorial planting" },
-  { label: "Observación astronómica", labelEng: "Stargazing" },
+  { key: "preparacionProductosLacteos" },
+  { key: "camping" },
+  { key: "desafioCampesino" },
+  { key: "ordenoDeVacas" },
+  { key: "siembraDeSeresQueridos" },
+  { key: "observacionAstronomica" },
 ];
 
 function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [language, setLanguage] = useState("esp");
   const [activeDropdown, setActiveDropdown] = useState(null); // 'menu' | 'exp' | null
   // Mobile submenu state: null | 'menu' | 'exp'
   const [mobileSubmenu, setMobileSubmenu] = useState(null);
@@ -36,7 +35,7 @@ function NavBar() {
   const menuRef = useRef(null);
   const expRef = useRef(null);
 
-  const {i18n} = useTranslation();
+  const { t, i18n } = useTranslation();
 
   // Close dropdowns on outside click
   useEffect(() => {
@@ -57,11 +56,6 @@ function NavBar() {
     setMobileSubmenu(null);
   };
 
-  const toggleLanguage = () => {
-    setLanguage(language === "esp" ? "eng" : "esp");
-  };
-
-  const t = (esp, eng) => language === "esp" ? esp : eng;
 
   const handleMobileMenuClick = (section) => {
     setMobileSubmenu(mobileSubmenu === section ? null : section);
@@ -81,14 +75,8 @@ function NavBar() {
     }
   };
 
- /*  const handleWhatsapp = () => {
-    const phoneNumber = "573102873928";
-    const message = encodeURIComponent("Hola, estoy interesada en los servicios del Juncal. ¿Podrían brindarme más información?");
-    const url = `https://wa.me/${phoneNumber}?text=${message}`;
-    window.open(url, "_blank");
-  } */
-
-const changeLanguage = (lng) => {
+  const changeLanguage = () => {
+    const lng = i18n.language === 'es' ? 'en' : 'es';
     i18n.changeLanguage(lng);
   };
 
@@ -104,7 +92,7 @@ const changeLanguage = (lng) => {
               className={`navBar__mobile-item ${mobileSubmenu === "menu" ? "navBar__mobile-item--active" : ""}`}
               onClick={() => handleMobileMenuClick("menu")}
             >
-              {t("Menú", "Menu")} <span className="navBar__mobile-arrow">{mobileSubmenu === "menu" ? "↟" : "↡"}</span>
+              {t("menu")} <span className="navBar__mobile-arrow">{mobileSubmenu === "menu" ? "↟" : "↡"}</span>
             </div>
             {mobileSubmenu === "menu" && (
               <div className="navBar__mobile-submenu">
@@ -114,7 +102,7 @@ const changeLanguage = (lng) => {
                     className="navBar__mobile-subitem"
                     onClick={() => handleMobileNav(item.href)}
                   >
-                    {t(item.label, item.labelEng)}
+                    {t(item.key)}
                   </div>
                 ))}
               </div>
@@ -127,7 +115,7 @@ const changeLanguage = (lng) => {
               className={`navBar__mobile-item ${mobileSubmenu === "exp" ? "navBar__mobile-item--active" : ""}`}
               onClick={() => handleMobileMenuClick("exp")}
             >
-              {t("Experiencias", "Experiences")} <span className="navBar__mobile-arrow">{mobileSubmenu === "exp" ? "↟" : "↡"}</span>
+              {t("experiencias")} <span className="navBar__mobile-arrow">{mobileSubmenu === "exp" ? "↟" : "↡"}</span>
             </div>
             {mobileSubmenu === "exp" && (
               <div className="navBar__mobile-submenu">
@@ -137,7 +125,7 @@ const changeLanguage = (lng) => {
                     className="navBar__mobile-subitem"
                     onClick={() => handleMobileNav("/experiences")}
                   >
-                    {t(item.label, item.labelEng)}
+                    {t(item.key)}
                   </div>
                 ))}
               </div>
@@ -150,7 +138,7 @@ const changeLanguage = (lng) => {
               className="navBar__mobile-item"
               onClick={() => handleMobileNav("/gallery")}
             >
-              {t("Galería", "Gallery")}
+              {t("galeria")}
             </div>
           </div>
 
@@ -174,7 +162,7 @@ const changeLanguage = (lng) => {
             onMouseLeave={() => setActiveDropdown(null)}
           >
             <span className="navBar__option-label">
-              {t("Menú", "Menu")} <span className="navBar__caret">↡</span>
+              {t("menu")} <span className="navBar__caret">↡</span>
             </span>
             {activeDropdown === "menu" && (
               <div className="navBar__submenu">
@@ -184,7 +172,7 @@ const changeLanguage = (lng) => {
                     className="navBar__submenu-item"
                     onClick={() => {handleMobileNav(item.href); setActiveDropdown(null);}}
                   >
-                    {t(item.label, item.labelEng)}
+                    {t(item.key)}
                   </span>
                 ))}
               </div>
@@ -201,7 +189,7 @@ const changeLanguage = (lng) => {
             onMouseLeave={() => setActiveDropdown(null)}
           >
             <span className="navBar__option-label">
-              {t("Experiencias", "Experiences")} <span className="navBar__caret">↡</span>
+              {t("experiencias")} <span className="navBar__caret">↡</span>
             </span>
             {activeDropdown === "exp" && (
               <div className="navBar__submenu">
@@ -212,7 +200,7 @@ const changeLanguage = (lng) => {
                     href="/experiences"
                     onClick={() => setActiveDropdown(null)}
                   >
-                    {t(item.label, item.labelEng)}
+                    {t(item.key)}
                   </a>
                 ))}
               </div>
@@ -223,30 +211,30 @@ const changeLanguage = (lng) => {
 
           {/* Galería */}
           <a className="navBar__option" href="/gallery">
-            {t("Galería", "Gallery")}
+            {t("galeria")}
           </a>
         </nav>
 
         {/* ACTIONS */}
         <div className="navBar__actionsSection">
-          <button type="button" className="navBar__button" onClick={() => openWhatsapp("Hola, estoy interesada en los servicios del Juncal. ¿Podrían brindarme más información?")} aria-label="Reservar ahora" >
-            <img src={buttonLogo} alt="Button Icon" className="navBar__button-icon" />
+          <button type="button" className="navBar__button" onClick={() => openWhatsapp(t('holaEstoyInteresada'))} aria-label={t('reservaAhora')} >
+            <img src={buttonLogo} alt="Icono cabeza de toro" className="navBar__button-icon" />
             <span className="navBar__button-text">
-              {t("Reserva ahora", "Book now")}
+              {t("reservaAhora")}
             </span>
           </button>
-          <button className="navBar__language" onClick={() => changeLanguage("en")} aria-label="Cambiar idioma">
-            <span className="navBar__language-text">esp/ing</span>
+          <button className="navBar__language" onClick={changeLanguage} aria-label={t('cambiarIdioma')}>
+            <span className="navBar__language-text">{t('espIng')}</span>
             <span className="navBar__language-icon">🌐</span>
           </button>
         </div>
 
         {/* HAMBURGER ICON */}
-        <button className="navBar__hamburguer-icon" onClick={toggleMenu} aria-label="Menú">
+        <button className="navBar__hamburguer-icon" onClick={toggleMenu} aria-label={t('menu')}>
           <img
             className="navBar__hamburguer-closeIcon"
             src={isMenuOpen ? closeIcon : hamburguerIcon}
-            alt={isMenuOpen ? "Cerrar menú" : "Menú"}
+            alt={isMenuOpen ? t('cerrarMenu') : t('menu')}
           />
         </button>
       </nav>
