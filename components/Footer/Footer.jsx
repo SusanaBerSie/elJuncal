@@ -6,7 +6,7 @@ import whatsappIcon from "../../src/images/whatsappIcon.png";
 import atIcon from "../../src/images/atIcon.png";
 import clickIcon from "../../src/images/click.png";
 import { useNavigate, useLocation } from "react-router-dom";
-
+import WeatherStatus from "../weather"; 
 
 function Footer({className=""}) {
  const navigate = useNavigate();
@@ -103,6 +103,7 @@ function Footer({className=""}) {
           </div>
         </div>
       </div>
+      <div><WeatherStatus /></div>
       <p className="footer__copyright">
         © 2026 El Juncal. Todos los derechos reservados.
       </p>
