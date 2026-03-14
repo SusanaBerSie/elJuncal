@@ -1,7 +1,7 @@
 import "./Rooms.css";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import flowerImage from "../../src/images/logoFlor.png";
-import buttonLogo from "../../src/images/buttonLogo.png";
+import buttonLogo from "../../src/images/buttonLogo.svg";
 import room1Photo1 from "../../src/images/room1Photo1.jpg";
 import room1Photo2 from "../../src/images/room1Photo2.jpg";
 import room1Photo3 from "../../src/images/room1Photo3.jpg";

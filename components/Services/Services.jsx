@@ -33,11 +33,11 @@ import bathroom6 from "../../src/images/bathroom6.jpg";
 import kittchen1 from "../../src/images/kittchen1.jpg";
 import kittchen2 from "../../src/images/kittchen2.jpg";
 import kittchen3 from "../../src/images/kittchen3.jpg";
-import kitchenIcon from "../../src/images/iconKitchen.png";
-import livingIcon from "../../src/images/iconLiving.png";
-import toiletIcon from "../../src/images/iconToilet.png";
-import flowerIcon from "../../src/images/iconflower.png";
-import houseIcon from "../../src/images/iconHouse.png";
+import kitchenIcon from "../../src/images/iconKitchen.svg";
+import livingIcon from "../../src/images/iconLiving.svg";
+import toiletIcon from "../../src/images/iconToilet.svg";
+import flowerIcon from "../../src/images/iconflower.svg";
+import houseIcon from "../../src/images/iconHouse.svg";
 import { useState, useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 

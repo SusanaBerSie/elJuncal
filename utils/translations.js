@@ -115,7 +115,7 @@ export const esTranslations = {
 
   // Reviews
   "loQueCuentan": "LO QUE CUENTAN LOS VISITANTES DEL JUNCAL",
-  "conectarGoogleApi": "Aquí debería conectar la API de google business profile",
+  "conectarGoogleApi": "Sección en construcción. Próximamente se mostrarán los comentarios de nuestros visitantes",
   "queremosSaberTuOpinion": "¡¡QUEREMOS SABER TU OPINIÓN!!",
 
   // Events
@@ -257,7 +257,7 @@ export const enTranslations = {
 
   // Reviews
   "loQueCuentan": "WHAT VISITORS SAY ABOUT JUNCAL",
-  "conectarGoogleApi": "Google Business Profile API should be connected here",
+  "conectarGoogleApi": "Section under construction. Soon we will show the comments of our visitors",
   "queremosSaberTuOpinion": "WE WANT TO KNOW YOUR OPINION!!",
 
   // Events

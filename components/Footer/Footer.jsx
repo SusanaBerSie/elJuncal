@@ -1,10 +1,10 @@
 import "./Footer.css";
 import logo from "../../src/images/logoRNT.png";
 import logoJuncal from "../../src/images/logoVector.png";
-import mapIcon from "../../src/images/map.png";
-import whatsappIcon from "../../src/images/whatsappIcon.png";
-import atIcon from "../../src/images/atIcon.png";
-import clickIcon from "../../src/images/click.png";
+import mapIcon from "../../src/images/map.svg";
+import whatsappIcon from "../../src/images/whatsappIcon.svg";
+import atIcon from "../../src/images/atIcon.svg";
+import clickIcon from "../../src/images/click.svg";
 import { useNavigate, useLocation } from "react-router-dom";
 import WeatherStatus from "../weather"; 
 
@@ -103,7 +103,7 @@ function Footer({className=""}) {
           </div>
         </div>
       </div>
-      <div><WeatherStatus /></div>
+      <WeatherStatus />
       <p className="footer__copyright">
         © 2026 El Juncal. Todos los derechos reservados.
       </p>

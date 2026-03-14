@@ -2,7 +2,7 @@ import "./NavBar.css";
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../../src/images/logoVector.png";
-import buttonLogo from "../../src/images/buttonLogo.png";
+import buttonLogo from "../../src/images/buttonLogo.svg";
 import hamburguerIcon from "../../src/images/hamburguer-icon.png";
 import closeIcon from "../../src/images/close-icon.png";
 import { useTranslation } from "react-i18next";

@@ -1,6 +1,6 @@
 import "./Events.css";
 import eventImage from "../../src/images/eventImage.jpg";
-import buttonLogo from "../../src/images/buttonLogo.png";
+import buttonLogo from "../../src/images/buttonLogo.svg";
 import { useTranslation } from "react-i18next";
 import { openWhatsapp } from "../../utils/whatsapp";
 

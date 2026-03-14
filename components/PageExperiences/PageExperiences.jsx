@@ -7,10 +7,10 @@ import milking from "../../src/images/milking.jpeg";
 import planting from "../../src/images/planting.jpg";
 import stargazing from "../../src/images/stargazing.jpg";
 import headerImage from "../../src/images/headerExperience.jpg";
-import buttonLogo from "../../src/images/buttonLogo.png";
-import clockIcon from "../../src/images/iconClock.png";
-import peopleIcon from "../../src/images/iconPeople.png";
-import itineraryIcon from "../../src/images/iconClipboard.png";
+import buttonLogo from "../../src/images/buttonLogo.svg";
+import clockIcon from "../../src/images/iconClock.svg";
+import peopleIcon from "../../src/images/iconPeople.svg";
+import itineraryIcon from "../../src/images/iconClipboard.svg";
 import { openWhatsapp } from "../../utils/whatsapp";
 
 function PageExperiences() {

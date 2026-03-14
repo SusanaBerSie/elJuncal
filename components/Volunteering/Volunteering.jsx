@@ -1,7 +1,7 @@
 import "./Volunteering.css";
 import volunteerImage from "../../src/images/volunteerImage.jpg";
 import { useState } from "react";
-import buttonLogo from "../../src/images/buttonLogo.png";
+import buttonLogo from "../../src/images/buttonLogo.svg";
 import { openWhatsapp } from "../../utils/whatsapp";
 import { useTranslation } from "react-i18next";
 

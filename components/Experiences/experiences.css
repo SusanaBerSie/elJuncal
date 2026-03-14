@@ -80,7 +80,7 @@
 
 .experiences__card-title {
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 500;
   color: #ffffff;
   margin: 0;
 }
@@ -92,5 +92,13 @@
 
 .experiences__button {
   font-size: 14px;
+}
+
+.experiences__card-price {
+  font-size: 14px;
+}
+
+.experiences__card-title {
+  font-size: 18px;
 }
 }
