@@ -43,7 +43,7 @@ return (
           <Route path="/experiences" element={<PageExperiences />} />
           <Route path="/gallery" element={<PageGallery />} />
           <Route path="*" element={<PageNotFound />} />
-        </Routes>
+    </Routes>
         <Footer className={isGallery ? "footer--gallery" : ""}/>
         </>
 );

@@ -19,7 +19,7 @@ function PageExperiences() {
   const experiencesTarjets = [
     {
       image: dairyProducts,
-      price: "50.000 COP/" + t("persona"),
+      price: "20.000 COP/" + t("persona"),
       title: t("preparacionProductosLacteos"),
       description: t("dairyProductsDescription"),
       duration: t("segunProducto"),
@@ -47,7 +47,7 @@ function PageExperiences() {
     },
     {
       image: challenge,
-      price: "30.000 COP/"+ t("persona"),
+      price: "15.000 COP/"+ t("persona"),
       title: t("desafioCampesino"),
       description: t("desafioCampesinoDescription"),
       duration: t("dosHoras"),
@@ -62,7 +62,7 @@ function PageExperiences() {
     },
     {
       image: milking,
-      price: "30.000 COP/"+ t("persona"),
+      price: "15.000 COP/"+ t("persona"),
       title: t("ordenoDeVacas"),
       description: t("ordenoDescription"),
       duration: t("dosHoras"),
@@ -76,7 +76,7 @@ function PageExperiences() {
     },
     {
       image: planting,
-      price: "30.000 COP/"+ t("persona"),
+      price: "10.000 COP/"+ t("persona"),
       title: t("siembraDeSeresQueridos"),
       description: t("siembraDescription"),
       duration: t("unaHora"),
