@@ -14,13 +14,13 @@ function Experiences() {
     {
       image: dairyProducts,
       title: t("preparacionProductosLacteos"),
-      price: "50.000 COP/" + t("persona"),
+      price: "20.000 COP/" + t("persona"),
     },
     { image: camping, title: t("camping"), price: "20.000 COP/" + t("persona") },
     {
       image: challenge,
       title: t("desafioCampesino"),
-      price: "30.000 COP/" + t("persona"),
+      price: "15.000 COP/" + t("persona"),
     },
   ];
 
