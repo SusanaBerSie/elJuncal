@@ -25,9 +25,9 @@ function PageExperiences() {
       duration: t("segunProducto"),
       capacity: "10",
       itinerary: [
-        { activity: t("introLacteos") },
-        { activity: t("preparacionCuajada") },
-        { activity: t("elaboracionQueso") },
+        { activity: t("elecciónProducto") },
+        { activity: t("preparacionIngredientes") },
+        { activity: t("elaboracionProducto") },
         { activity: t("degustacionYempaque") },
       ],
     },
@@ -54,10 +54,11 @@ function PageExperiences() {
       capacity: "20",
       itinerary: [
         { activity: t("registroEquipos") },
-        { activity: t("primeraRondaObstaculos") },
-        { activity: t("segundaRondaFuerza") },
-        { activity: t("finalYpremiacion") },
+        { activity: t("cambioVestuario") },
+        { activity: t("Obstaculos") },
+        { activity: t("Fuerza") },
         { activity: t("almuerzoCampestre") },
+        { activity: t("hidratación") },
       ],
     },
     {
@@ -68,10 +69,10 @@ function PageExperiences() {
       duration: t("dosHoras"),
       capacity: "5",
       itinerary: [
-        { activity: t("introOrdeno") },
         { activity: t("observacionProceso") },
-        { activity: t("practicaOrdeno") },
-        { activity: t("degustacionLeche") },
+        { activity: t("ordenoGuiado") },
+        { activity: t("arreoVacas") },
+        { activity: t("alimentacionTerneros") },
       ],
     },
     {
@@ -83,9 +84,9 @@ function PageExperiences() {
       capacity: "20",
       itinerary: [
         { activity: t("preparacionTerreno") },
-        { activity: t("ceremoniaSiembra") },
         { activity: t("plantacionArbol") },
-        { activity: t("registroPlaca") },
+        { activity: t("ceremoniaPlaca") },
+        { activity: t("refrigerioSiembra") },
       ],
     },
     {
@@ -100,6 +101,7 @@ function PageExperiences() {
         { activity: t("observacionFirmamento") },
         { activity: t("identificacionConstelaciones") },
         { activity: t("fogataBajoEstrellas") },
+        { activity: t("refrigerioStargazing") },
       ],
     },
   ];

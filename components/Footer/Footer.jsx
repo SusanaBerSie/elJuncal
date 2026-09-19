@@ -11,7 +11,6 @@ import WeatherStatus from "../weather";
 function Footer({className=""}) {
  const navigate = useNavigate();
  const location = useLocation();
-
  const handleFooterNav = (href) => {
   if (href.startsWith("#")) {
     if (location.pathname === "/") {
